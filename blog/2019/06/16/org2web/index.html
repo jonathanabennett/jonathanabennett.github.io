@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Org2web - Jonathan Bennett&#39;s Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jonathan Bennett" />
+    <link rel="stylesheet" href="https://jonathanabennett.github.io/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://jonathanabennett.github.io/media/css/prettify.css" type="text/css">
+  </head>
+<body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="https://jonathanabennett.github.io/">Jonathan Bennett&#39;s Blog</a> <span class="subtitle">Emacs, Python, and Education</span></h1>
+        <ul>
+          <li><a href="https://jonathanabennett.github.io/blog/">Blog</a></li>
+          <li><a href="https://jonathanabennett.github.io/posts/">Posts</a></li>
+          <li><a href="https://jonathanabennett.github.io/tags/">Tags</a></li>
+          <li><a href="https://jonathanabennett.github.io/about/">About</a></li>
+          <li><a href="https://github.com/jonathanabennett/jonathanabennett.github.io.git">Github</a></li>
+          <li><a href="https://jonathanabennett.github.io/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="jonathanabennett.github.io">
+        </form>
+      </header>
+    </div>
+
+<div class="content-and-footer">
+<div>
+<div class="post">
+<h1 class="post-title">Org2web</h1>
+
+<div id="outline-container-orgc89052a" class="outline-2">
+<h2 id="orgc89052a">Blogging with Org-mode</h2>
+<div class="outline-text-2" id="text-orgc89052a">
+<p>
+Because I work so much in org-mode, I wanted to also write my blog in org-mode.
+Org-mode is not just an amazing tool for organizing your things, it is also the best markup language in the world.
+</p>
+
+<p>
+Headers are marked with a series of <code>*</code>'s at the beginning of the line (the more you add, the deeper it is in the hierarchy).
+Text can be marked <code>*bold*</code> (<b>bold</b>) and <code>/italics/</code> (<i>italics</i>).
+In-line code blocks are indicated with = signs (<code>this is code</code>).
+The linking format is simple, and you don't actually have to memorize it because <code>C-c C-l</code> opens a minibuffer which allows you to easily insert a link.
+</p>
+</div>
+
+<div id="outline-container-org04180f6" class="outline-3">
+<h3 id="org04180f6">Exporting</h3>
+<div class="outline-text-3" id="text-org04180f6">
+<p>
+Not only that, org-mode exports to just about everything (especially if you install pandoc).
+So if I write a blog post that would actually be helpful for my coworkers to read, I can easily export it to a PDF to distribute it to them.
+In fact, I've found at least 2 or 3 posts which purport to export from org-mode to Google Docs, though I haven't had a chance to test any of them yet.
+</p>
+
+<p>
+I am using Github Pages to publish my blog because it's a simple, straightforward way to publish a static webpage.
+It is even possible to add comments, though I have not yet done so (in large part because I don't feel like moderating comments).
+I considered Wordpress, and I may yet switch to Wordpress if I cannot solve the issues described below, but I like the idea of keeping the whole website in git.
+</p>
+
+<p>
+Now, there is a fairly simple-minded and straightforward way to publish a static webpage from org-mode to Github pages.
+Create two directories, a <code>src</code> directory which will hold org-mode documents and an <code>export</code> directory which will hold the html.
+Then, you simply write your blog in the src directory and use the org-export menu to export to the export directory.
+The export directory is your git repo, so now you simply add, commit, and push to origin.
+But that doesn't do things like nav bars, CSS, tags, etc.
+I could write that stuff by hand, but that's a lot of extra work.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8e792a9" class="outline-2">
+<h2 id="org8e792a9">The Search</h2>
+<div class="outline-text-2" id="text-org8e792a9">
+<p>
+So I searched for options.
+I began with the obvious: Jekyll is a static site generator, which would meet my needs.
+But it is written in Ruby, and Ruby is not a language I am familiar with.
+Having code written in languages I don't know running on my computer isn't something that generally bothers me, but it seemed a bit backward for a technical blog.
+</p>
+
+<p>
+I looked at a pair of Python generators (Pelican and Nikola).
+I was able to get Nikola installed, but the org-mode export didn't work correctly.
+I was about to try Pelican, but I discovered org2web first.
+</p>
+</div>
+
+<div id="outline-container-org530e873" class="outline-3">
+<h3 id="org530e873">Org2web</h3>
+<div class="outline-text-3" id="text-org530e873">
+<p>
+Org2web looked like exactly what I wanted.
+In fact, it seemed that it did everything I wanted and more and it was fairly simple to use.
+So I set it up (which was as simple as calling org2web-add-project in my init.el).
+</p>
+
+<p>
+I would normally describe how I set this up and use it here, but I currently cannot recommend this tool for publishing unless you're running Linux.
+This is because of how it currently handles exports.
+From my (limited) understanding of emacs lisp, it seems that it actually requires specific terminal emulators in order to run.
+Here is the code snippet, found <a href="https://github.com/tumashu/org2web/blob/master/org2web-vars.el">beginning on line 50.</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">defcustom</span> <span style="color: #f8f8f2;">org2web-terminal-emulater</span>
+  (<span style="color: #ff79c6; font-weight: bold;">or</span> (executable-find <span style="color: #f1fa8c;">"x-terminal-emulator"</span>)
+      (executable-find <span style="color: #f1fa8c;">"gnome-terminal"</span>)
+      (executable-find <span style="color: #f1fa8c;">"konsole"</span>)
+      (executable-find <span style="color: #f1fa8c;">"rxvt-unicode"</span>)
+      (executable-find <span style="color: #f1fa8c;">"rxvt"</span>)
+      (executable-find <span style="color: #f1fa8c;">"xterm"</span>))
+  <span style="color: #6272a4;">"Terminal emulater used by org2web update script."</span>
+  <span style="color: #ffb86c;">:group</span> 'org2web
+  <span style="color: #ffb86c;">:type</span> 'string)
+</pre>
+</div>
+
+<p>
+My Mac does not have any of these things, nor do I want it to.
+I've asked about the status of an issue on the Github for this package (<a href="https://github.com/tumashu/org2web/issues/18">Here's the issue</a>).
+If this can't be made to work, the next step will be to transition away from org2web, likely to Wordpress since it has a supported org-mode export package.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2019-06-16</span>
+        <span title="last modification date" class="post-info">2019-06-16</span>
+        <span title="tags" class="post-info">N/A</span>
+        <span title="author" class="post-info">Jonathan Bennett</span>
+      </div>
+      <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="https://jonathanabennett.github.io/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+        <p>
+          Copyright &copy; <span id="footerYear"></span> <a href="mailto:doulos05 &lt;at&gt; gmail &lt;dot&gt; com">Jonathan Bennett</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/tumashu/org2web" target="_blank">org2web</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+</div>
+</body>
+</html>
