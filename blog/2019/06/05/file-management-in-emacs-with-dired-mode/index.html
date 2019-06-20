@@ -31,13 +31,13 @@
 <div class="post">
 <h1 class="post-title">File Management in Emacs with dired-mode</h1>
 
-<div id="outline-container-org000de13" class="outline-2">
-<h2 id="org000de13">IMPORTANT NOTES</h2>
-<div class="outline-text-2" id="text-org000de13">
+<div id="outline-container-org5572053" class="outline-2">
+<h2 id="org5572053">IMPORTANT NOTES</h2>
+<div class="outline-text-2" id="text-org5572053">
 </div>
-<div id="outline-container-orgfc0cb75" class="outline-3">
-<h3 id="orgfc0cb75">Dired is Big</h3>
-<div class="outline-text-3" id="text-orgfc0cb75">
+<div id="outline-container-org10d36ec" class="outline-3">
+<h3 id="org10d36ec">Dired is Big</h3>
+<div class="outline-text-3" id="text-org10d36ec">
 <p>
 <code>dired</code> has turned out to be a far, FAR bigger thing to learn than I had anticipated.
 That, coupled with the fact that my writing time vanished in the fires of the last week of school means I did not fully explore <code>dired</code> and will be returning to it later.
@@ -47,9 +47,9 @@ I will be returning to this again in the future.
 </div>
 </div>
 
-<div id="outline-container-orgda96c7d" class="outline-3">
-<h3 id="orgda96c7d">I use evil-collection</h3>
-<div class="outline-text-3" id="text-orgda96c7d">
+<div id="outline-container-org11486ab" class="outline-3">
+<h3 id="org11486ab">I use evil-collection</h3>
+<div class="outline-text-3" id="text-org11486ab">
 <p>
 All the keybindings I describe below are true on my system <b>after</b> installing <code>evil-collection</code>.
 If you are running pure Emacs, these keybindings will not work.
@@ -60,9 +60,9 @@ I recommend using <a href="https://www.gnu.org/software/emacs/refcards/pdf/dired
 </div>
 </div>
 
-<div id="outline-container-org5b81e5d" class="outline-2">
-<h2 id="org5b81e5d">Cost of Context Switches</h2>
-<div class="outline-text-2" id="text-org5b81e5d">
+<div id="outline-container-orgcca8f2c" class="outline-2">
+<h2 id="orgcca8f2c">Cost of Context Switches</h2>
+<div class="outline-text-2" id="text-orgcca8f2c">
 <p>
 As a teacher, I deal with context switches all day, and they are easily one of the biggest drains on my productivity.
 What is a context switch?
@@ -95,9 +95,9 @@ One of the goals of this Year of Emacs project is to complete as many of my dail
 </div>
 </div>
 
-<div id="outline-container-orgc2bd2b6" class="outline-2">
-<h2 id="orgc2bd2b6">End of Year Cleanup</h2>
-<div class="outline-text-2" id="text-orgc2bd2b6">
+<div id="outline-container-org2c38e03" class="outline-2">
+<h2 id="org2c38e03">End of Year Cleanup</h2>
+<div class="outline-text-2" id="text-org2c38e03">
 <p>
 Right now, I'm in year-end cleanup mode.
 Notes from old classes need to be archived, plans for next year need to be started, and some files and folders need to be copied over.
@@ -124,9 +124,9 @@ That number might go down relatively quickly, but it's still more commands that 
 </div>
 </div>
 
-<div id="outline-container-org34e9599" class="outline-2">
-<h2 id="org34e9599">Basics using evil-collection</h2>
-<div class="outline-text-2" id="text-org34e9599">
+<div id="outline-container-orga7445ec" class="outline-2">
+<h2 id="orga7445ec">Basics using evil-collection</h2>
+<div class="outline-text-2" id="text-orga7445ec">
 <p>
 One of the first challenges I had was that <code>dired</code> doesn't use Evil keybindings, even if you've installed evil-mode.
 I know a lot of people reading this will probably say I should just learn the Emacs keybindings.
@@ -154,10 +154,10 @@ Here is the setup for <code>evil-collection</code>.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">use-package</span> <span style="color: #008b8b;">evil-collection</span>
-  <span style="color: #483d8b;">:after</span> (evil)
-  <span style="color: #483d8b;">:config</span>
-  (<span style="color: #a020f0;">setq</span> evil-collection-mode-list '(dired))
+<pre class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">evil-collection</span>
+  <span style="color: #ffb86c;">:after</span> (evil)
+  <span style="color: #ffb86c;">:config</span>
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> evil-collection-mode-list '(dired))
   (evil-collection-init))
 </pre>
 </div>
@@ -186,13 +186,13 @@ In all cases, I want to have control over what is set and what is not set in my 
 </div>
 </div>
 
-<div id="outline-container-orgae4ce86" class="outline-2">
-<h2 id="orgae4ce86">Using dired</h2>
-<div class="outline-text-2" id="text-orgae4ce86">
+<div id="outline-container-org39d53ef" class="outline-2">
+<h2 id="org39d53ef">Using dired</h2>
+<div class="outline-text-2" id="text-org39d53ef">
 </div>
-<div id="outline-container-orgf638d17" class="outline-3">
-<h3 id="orgf638d17">Configuration</h3>
-<div class="outline-text-3" id="text-orgf638d17">
+<div id="outline-container-org3e2a460" class="outline-3">
+<h3 id="org3e2a460">Configuration</h3>
+<div class="outline-text-3" id="text-org3e2a460">
 <p>
 While most new Emacsers assume that <code>use-package</code> is meant to install packages, it's actually meant to manage packages.
 What's the difference, you say?
@@ -203,14 +203,14 @@ Well, <code>dired</code> is already installed in your Emacs, but you can still u
 Here is the setup I'm currently using.
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">use-package</span> <span style="color: #008b8b;">dired</span>
-<span style="color: #483d8b;">:ensure</span> nil
-<span style="color: #483d8b;">:config</span>
-(<span style="color: #a020f0;">when</span> (string= system-type <span style="color: #8b2252;">"darwin"</span>)
-  (<span style="color: #a020f0;">setq</span> dired-use-ls-dired t
-        insert-directory-program <span style="color: #8b2252;">"/usr/local/bin/gls"</span>))
-<span style="color: #483d8b;">:custom</span>
-(dired-listing-switches <span style="color: #8b2252;">"-aBhl --group-directories-first"</span>))
+<pre class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">dired</span>
+<span style="color: #ffb86c;">:ensure</span> nil
+<span style="color: #ffb86c;">:config</span>
+(<span style="color: #ff79c6; font-weight: bold;">when</span> (string= system-type <span style="color: #f1fa8c;">"darwin"</span>)
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> dired-use-ls-dired t
+        insert-directory-program <span style="color: #f1fa8c;">"/usr/local/bin/gls"</span>))
+<span style="color: #ffb86c;">:custom</span>
+(dired-listing-switches <span style="color: #f1fa8c;">"-aBhl --group-directories-first"</span>))
 </pre>
 </div>
 
@@ -233,9 +233,9 @@ Play around on the command line until you get something you like, and then set y
 </p>
 </div>
 
-<div id="outline-container-orga0e165c" class="outline-4">
-<h4 id="orga0e165c">Mac OS Users</h4>
-<div class="outline-text-4" id="text-orga0e165c">
+<div id="outline-container-orgff2927d" class="outline-4">
+<h4 id="orgff2927d">Mac OS Users</h4>
+<div class="outline-text-4" id="text-orgff2927d">
 <p>
 As noted above, <code>dired</code> uses the <code>ls</code> command if possible to generate the directory listing.
 But Apple is using a non-GNU set of <code>core-utils</code>.
@@ -251,9 +251,9 @@ That's what the <code>when</code> command in the listing above does.
 </div>
 </div>
 
-<div id="outline-container-orgda8da2c" class="outline-3">
-<h3 id="orgda8da2c">Entering dired-mode</h3>
-<div class="outline-text-3" id="text-orgda8da2c">
+<div id="outline-container-org37b0cbe" class="outline-3">
+<h3 id="org37b0cbe">Entering dired-mode</h3>
+<div class="outline-text-3" id="text-org37b0cbe">
 <p>
 The way I usually get into <code>dired-mode</code> is through the find-file command.
 As noted in my <a href="https://jonathanabennett.github.io/blog/2019/05/28/emacs.org-~-may-2019/">Emacs.org</a> file, that is bound to <code>&lt;SPC&gt; e</code> on my system.
@@ -265,9 +265,9 @@ You can also open <code>dired-mode</code> directly using <code>C-x d</code> and 
 </p>
 </div>
 </div>
-<div id="outline-container-orgc86c10c" class="outline-3">
-<h3 id="orgc86c10c">Using dired-mode</h3>
-<div class="outline-text-3" id="text-orgc86c10c">
+<div id="outline-container-orgf1fe47c" class="outline-3">
+<h3 id="orgf1fe47c">Using dired-mode</h3>
+<div class="outline-text-3" id="text-orgf1fe47c">
 <p>
 Once in <code>dired-mode</code>, I can use the <code>j</code> and <code>k</code> keys to navigate up and down.
 While there are searching functions, I did not need them for what I was working on because I need to inspect pretty much every file as part of my end of year cleanup.
@@ -319,9 +319,9 @@ Once you are finished, you can then simply close the dired buffer with <code>q</
 </div>
 </div>
 
-<div id="outline-container-orgee6bc70" class="outline-2">
-<h2 id="orgee6bc70">Final Thoughts</h2>
-<div class="outline-text-2" id="text-orgee6bc70">
+<div id="outline-container-org1a5936a" class="outline-2">
+<h2 id="org1a5936a">Final Thoughts</h2>
+<div class="outline-text-2" id="text-org1a5936a">
 <p>
 Dired really surprised me with how useful it is.
 I was certain that it would be useful, but it surprised me how quickly it surpassed the tools I had been using previously.
@@ -344,9 +344,9 @@ I have only used 1 of the means of marking.
 </p>
 </div>
 
-<div id="outline-container-org9f53254" class="outline-3">
-<h3 id="org9f53254">Future Expansions</h3>
-<div class="outline-text-3" id="text-org9f53254">
+<div id="outline-container-org5d29c24" class="outline-3">
+<h3 id="org5d29c24">Future Expansions</h3>
+<div class="outline-text-3" id="text-org5d29c24">
 <p>
 There is now a way to get Google Drive directly in Emacs via <code>GVFS</code>.
 I haven't played with it because, well, I'm tired of fighting with my Mac right now and installing <code>GVFS</code> purports to be easy, but my experience has been that this is rarely as true as is implied.
