@@ -31,9 +31,9 @@
 <div class="post">
 <h1 class="post-title">Python and Emacs Pt. 1</h1>
 
-<div id="outline-container-orgcb27186" class="outline-2">
-<h2 id="orgcb27186">Python</h2>
-<div class="outline-text-2" id="text-orgcb27186">
+<div id="outline-container-orgb670659" class="outline-2">
+<h2 id="orgb670659">Python</h2>
+<div class="outline-text-2" id="text-orgb670659">
 <p>
 Python is my programming language of choice.
 I first started learning Python in the early 2000's and it was the first programming language which just "clicked" for me.
@@ -52,9 +52,9 @@ The next post on programming and Emacs will focus much more heavily on Magit, be
 </div>
 </div>
 
-<div id="outline-container-org537b2a5" class="outline-2">
-<h2 id="org537b2a5">Setting Up Python</h2>
-<div class="outline-text-2" id="text-org537b2a5">
+<div id="outline-container-org40f5fde" class="outline-2">
+<h2 id="org40f5fde">Setting Up Python</h2>
+<div class="outline-text-2" id="text-org40f5fde">
 <p>
 This guide assumes you have used Homebrew to install Python 3.7 and then promptly installed pyenv and pipenv.
 Pipenv, among other things, allows you to handle virtual environments easily, making it an excellent tool if you are working on multiple projects.
@@ -70,9 +70,9 @@ Whenever possible, you should leave your system Python alone, installing the min
 </p>
 </div>
 
-<div id="outline-container-org8b58872" class="outline-3">
-<h3 id="org8b58872">Installing Modern Python</h3>
-<div class="outline-text-3" id="text-org8b58872">
+<div id="outline-container-orgf98a546" class="outline-3">
+<h3 id="orgf98a546">Installing Modern Python</h3>
+<div class="outline-text-3" id="text-orgf98a546">
 <p>
 As the guys at Podcast.__init__() and PythonBytes like to say, Python 3 is modern Python. Python 2 is legacy Python.
 </p>
@@ -115,9 +115,9 @@ So expect a more detailed writeup on this shortly.
 </div>
 </div>
 
-<div id="outline-container-org6d0fb9a" class="outline-2">
-<h2 id="org6d0fb9a">Setting up Emacs</h2>
-<div class="outline-text-2" id="text-org6d0fb9a">
+<div id="outline-container-org148a76c" class="outline-2">
+<h2 id="org148a76c">Setting up Emacs</h2>
+<div class="outline-text-2" id="text-org148a76c">
 <p>
 Before we can set up Emacs fully, we have one last command we need to run.
 I installed the Emacs dependencies directly into my global python (the 3.7.3 install).
@@ -135,9 +135,9 @@ Having installed your dependencies, it's time to set up Emacs.
 </p>
 </div>
 
-<div id="outline-container-orgdfa8ea0" class="outline-3">
-<h3 id="orgdfa8ea0">elpy</h3>
-<div class="outline-text-3" id="text-orgdfa8ea0">
+<div id="outline-container-org111efe7" class="outline-3">
+<h3 id="org111efe7">elpy</h3>
+<div class="outline-text-3" id="text-org111efe7">
 <p>
 Elpy is adds features to the default Python mode.
 Most importantly, it adds support for autocompletion via Jedi.
@@ -153,9 +153,9 @@ Most importantly, it adds support for autocompletion via Jedi.
 </div>
 </div>
 
-<div id="outline-container-orgb3bd356" class="outline-3">
-<h3 id="orgb3bd356">Python Mode</h3>
-<div class="outline-text-3" id="text-orgb3bd356">
+<div id="outline-container-orgd1bdd1d" class="outline-3">
+<h3 id="orgd1bdd1d">Python Mode</h3>
+<div class="outline-text-3" id="text-orgd1bdd1d">
 <p>
 This configures the base package for python.
 Because this is a built-in, we need <code>:ensure nil</code>.
@@ -172,9 +172,9 @@ Because this is a built-in, we need <code>:ensure nil</code>.
 </div>
 </div>
 
-<div id="outline-container-org430570e" class="outline-3">
-<h3 id="org430570e">Company</h3>
-<div class="outline-text-3" id="text-org430570e">
+<div id="outline-container-org7d2aca1" class="outline-3">
+<h3 id="org7d2aca1">Company</h3>
+<div class="outline-text-3" id="text-org7d2aca1">
 <p>
 Company is the auto-completion framework that I use.
 Start typing and it will attempt to auto-complete your words if you pause for a second.
@@ -215,9 +215,9 @@ Specifically, I want to switch from Enter to tab to complete.
 </div>
 </div>
 
-<div id="outline-container-org95ec52a" class="outline-3">
-<h3 id="org95ec52a">Initial Setup</h3>
-<div class="outline-text-3" id="text-org95ec52a">
+<div id="outline-container-org62229dc" class="outline-3">
+<h3 id="org62229dc">Initial Setup</h3>
+<div class="outline-text-3" id="text-org62229dc">
 <p>
 After you've set this up, the very next thing you need to do is <code>M-x jedi:install-server</code>.
 Once you've finished this, you've got a solid Python editor in Emacs, and it took surprisingly little setup.
@@ -230,9 +230,9 @@ Follow up tutorials will cover various aspects of working with Python, but for n
 </div>
 </div>
 
-<div id="outline-container-org52ec808" class="outline-2">
-<h2 id="org52ec808">Wait, that's it?</h2>
-<div class="outline-text-2" id="text-org52ec808">
+<div id="outline-container-org21942c7" class="outline-2">
+<h2 id="org21942c7">Wait, that's it?</h2>
+<div class="outline-text-2" id="text-org21942c7">
 <p>
 Well, right now yes. There will be more in a future week, but I literally just discovered and started working with pipenv 3 days ago.
 I need a little more time to flesh out my workflow there.
