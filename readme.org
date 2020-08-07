@@ -1,0 +1,56 @@
+#+TITLE: Resume
+#+AUTHOR: Jonathan A. Bennett <doulos05@gmail.com>
+#+DATE: [2020-07-15 Wed]
+ #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+
+#+HTML_HEAD: <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+#+HTML_HEAD: <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+* Jonathan Bennett
+/M.Ed. Educational Research/
+
+I am an Educator who constantly looks for ways to improve the school community through technology inside and outside the classroom. At my most recent schools, I have brought my prgramming skills to bear on developing custom programs which address specific, real life challenges faced by students and teachers at that school. I am looking for a school where I can further develop my skills at curriculum development by launching a new Computer Science program or expanding an existing program.
+** Contact Information
+- Cell: +66 84 236 4067
+- Email: doulos05@gmail.com
+* Quick Summary
+** Work Experience (5 previous years)
+*** Ruamrudee International School Aug 2018 - present
+MS Computer Science & Robotics Teacher responsible for developing and launching a new CS & Robotics program in the Middle School. During this time, I also developed a website used to tracking attendance in our Focus Block program when PowerSchool proved inadequate.
+*** Seoul Scholars International Jan 2017 - Jul 2018
+MS & HS World History and Geography teacher responsible for teaching on level and AP World History. During this time, I also developed an online portal for implementing a minimalist version of SWPBIS.
+*** EtonHouse Prep Oct 2015 - Oct 2016
+ICT Project Leader responsible for training teacher at a school which had recently adopted the Google Suite. I was also responsible for teaching digital literacy and programming in KS1/2 classes. During this time, I led a number of training initatives to help teachers achieve their level 1 Google Certification.
+** Qualifications
+*** Washington DC Teaching Certification Expiring Jan 2022
+- 6-12 Social Studies
+- 6-12 Computer Science
+*** M. Ed Educational Research
+Completed in 2019. Conducted research on how to teach debugging skills to Middle and High School students.
+*** B.S. Cross Cultural Studies
+Completed in 2006.
+** Classroom Approach
+- Blended Learning
+- Project Based Learning
+- Student Driven Instruction
+- Standards Based Assessment
+- Data Informed Intervention
+** Skills
+- Advanced Python
+- Intermediate JavaScript
+- Advanced HTML and CSS
+- Block Based Robotics Programming
+- Robotics competition team formation and coaching
+- Intermural robotics competition organization
+- Design Thinking
+- Ran and organized a MakerSpace
+- Curriculum Development
+- Conflict Resolution
+* Extended Work Experience
+** Kyunghee Elementary School 2015
+** Sterling Academy 2014
+** YBM PSA Yongsan Branch 2011-2014
+** Soojung International Christian School 2010-2011
+** Standard Register 2006-2010
