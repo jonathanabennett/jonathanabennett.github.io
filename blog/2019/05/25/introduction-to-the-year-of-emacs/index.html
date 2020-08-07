@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Introduction to the Year of Emacs - Jonathan Bennett&#39;s Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jonathan Bennett" />
+    <link rel="stylesheet" href="https://jonathanabennett.github.io/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://jonathanabennett.github.io/media/css/prettify.css" type="text/css">
+  </head>
+<body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="https://jonathanabennett.github.io/">Jonathan Bennett&#39;s Blog</a> <span class="subtitle">Emacs, Python, and Education</span></h1>
+        <ul>
+          <li><a href="https://jonathanabennett.github.io/blog/">Blog</a></li>
+          <li><a href="https://jonathanabennett.github.io/posts/">Posts</a></li>
+          <li><a href="https://jonathanabennett.github.io/tags/">Tags</a></li>
+          <li><a href="https://jonathanabennett.github.io/about/">About</a></li>
+          <li><a href="https://github.com/jonathanabennett/jonathanabennett.github.io.git">Github</a></li>
+          <li><a href="https://jonathanabennett.github.io/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="jonathanabennett.github.io">
+        </form>
+      </header>
+    </div>
+
+<div class="content-and-footer">
+<div>
+<div class="post">
+<h1 class="post-title">Introduction to the Year of Emacs</h1>
+
+<div id="outline-container-orgda1275e" class="outline-2">
+<h2 id="orgda1275e">Editor Wars</h2>
+<div class="outline-text-2" id="text-orgda1275e">
+<p>
+I got my start with real text editors 15 years ago with Vim.
+Vim, for those who have only ever lived on the Emacs side of things, is famous for being modal.
+But that's not the main thing that distinguishes it.
+Vim's unifying concept is a programming language for text editing.
+There are a number of blogs and articles which explain this far better than I can, but instead I will just note that Vim worked great for me as a programming environment.
+</p>
+
+<p>
+Vim was (and is) amazing for programming, at least for my workflow.
+And I did most of my other writing online, particularly in Google Docs.
+So I didn't need to look for anything else.
+This was coupled with the fact that I was working mostly on a Chromebook using crouton.
+</p>
+
+<p>
+While it is possible to get Emacs working in crouton, the Fn keys are not actually Fn keys.
+And this was a problem for me when I went to experiment with Emacs.
+Sure, those keys can be reprogrammed, but that wasn't something I was willing to do for an experiment.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbfa8c76" class="outline-2">
+<h2 id="orgbfa8c76">Limitations in Vim</h2>
+<div class="outline-text-2" id="text-orgbfa8c76">
+<p>
+Around 2016, I started moving more and more of my workflow into plain text.
+One of the main tasks I wanted to move was remembering things. 
+I also wanted to use LaTeX for test generation because I wanted a simple, programmatic way to randomize the order of questions and MCQ responses in tests.
+I kept using Vim, because it was all I knew.
+But Vim was becoming less and less efficient at all the non-text editing tasks I needed to do.
+</p>
+
+<p>
+The biggest pain point was organizing information.
+I was using vimwiki, and it was... OK.
+I used the taskwiki plugin to connect to taskwarrior, and that was also OK.
+But it wasn't great.
+</p>
+
+<p>
+All the time, I had Emacs and org-mode popping up on my radar.
+So, when it came time to start my Masters and I considered how to adapt the workflow I was using in Vim to writing an academic paper, I decided that this was the time to make the switch.
+Worst case scenario, I get to the end of the first page of my paper and find Emacs so obtuse that I switch back.
+It's all plain text anyway, so it doesn't really matter which tool I'm accessing it in.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd432d1b" class="outline-2">
+<h2 id="orgd432d1b">The Spacemacs Phase</h2>
+<div class="outline-text-2" id="text-orgd432d1b">
+<p>
+The final thing that pushed me over the edge was the discovery of Spacemacs.
+Spacemacs, for those who don't know, is a highly configured Emacs environment.
+It has reasonable defaults configured for a large number of "essential" packages, including Evil keybindings.
+Evil is an Emacs mode that makes Emacs behave like Vim when it comes to text editing.
+Fully modal, with basically every key binding I had memorized from Vim ported directly into Emacs.
+</p>
+
+<p>
+So I took the plunge.
+Now, Spacemacs is not a bad way for someone coming from Vim to get into Emacs.
+I'll write more about this at some point, but the primary advantage of Spacemacs is that it does a lot of the fiddly bits of configuration for you.
+It allows you to jump straight into using a well-configured editor without having to wade through a sea of open and close parens.
+</p>
+
+<p>
+But Spacemacs has some serious limitations as well.
+The first one is speed.
+Spacemacs tries to be fast, it uses lots of pretty slick tricks to speed itself up.
+But Spacemacs loads a ton of packages and therefore it loads slower than bare Emacs.
+A lot of that slowness is adding features that the average new convert to Emacs isn't using.
+Honestly, many of them are features that even the average expert Emacs user isn't using.
+</p>
+
+<p>
+The second one is easy of customization.
+Part of the appeal of one of the "classic editors" (especially for a geek like me) is the ability to customize them.
+Because Spacemacs has some pretty slick tricks to speed it up, customization is not as simple as editing your init.el file.
+There are specific functions you need to hide your configuration in so that it gets called at the appropriate time and place.
+</p>
+
+<p>
+"Hey, you're not hiding it, you're organizing your config file!"
+Perhaps. But you're organizing it based on how the computer thinks it should be organized, <b>not</b> based on how you think it should be organized.
+But what if your brain doesn't organize things exactly the same way that the Spacemacs guys do?
+</p>
+
+<p>
+Also, using Spacemacs, to a degree, locks you into getting support for your customization from the Spacemacs team.
+The general Emacs community may not be able to help you.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3358fa3" class="outline-2">
+<h2 id="org3358fa3">Taking the Plunge</h2>
+<div class="outline-text-2" id="text-org3358fa3">
+<p>
+So in January of this year, I nuked my <code>.emacs.d</code> directory and started work on building Emacs my own way.
+To steepen the learning curve (meaning you learn more things faster, not its harder to learn), I decided to keep my Emacs config in a literate <code>.org</code> file.
+The next post in this series will be a snapshot of my Emacs configuration as it stands right now. 
+</p>
+
+<p>
+This configuration file has grown considerably over the semester, and that growth has been universally beneficial for me as a programmer and a user of Emacs.
+I now understand my text editor in a way that I never could in Vim, part of that is because <code>elisp</code> makes more sense to me than <code>Vimscript</code>.
+But the literate approach to my configuration is the primary reason.
+All of the snippets that are there, I know what they do.
+Not just because I can read them, but because I can read the commentary they are embedded in.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgda31590" class="outline-2">
+<h2 id="orgda31590">The Big Payoff</h2>
+<div class="outline-text-2" id="text-orgda31590">
+<p>
+Last week, I handed in my completed thesis.
+The whole project lives in a bibtex file and a collection of <code>.org</code> files.
+All of the data analysis is done using pandas, matplotlib, and scipy in source blocks, including the generation of the charts.
+And the whole thing lives in a git repository, which I have managed exclusively through Emacs (Magit), with the exception of the initial creation and setup because I didn't yet know how to initialize a repository through Magit when I started.
+The PDF that I handed in is completely ephemeral, and when I shop the thesis around for publication, I can change the style to match the requirements of the journal by making two simple changes to the primary org file and maybe my <code>emacs.org</code> file.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org530b6c9" class="outline-2">
+<h2 id="org530b6c9">Year of Emacs</h2>
+<div class="outline-text-2" id="text-org530b6c9">
+<p>
+But that isn't the only thing I use Emacs for, nor is it the only thing I want to use Emacs for.
+And that brings me to this project.
+For the next year, I intend to explore and write up 1 Emacs mode, package, or use case per week.
+Some Emacs modes might get visited more than once.
+For example, I already know I'll dedicate a week to my literate dotfiles, a week to my thesis writing workflow, and a week to my class management workflow.
+That's 3 weeks of org-mode.
+But my primary goal is to expand my knowledge of Emacs in general.
+</p>
+
+<p>
+I also want to tighten up my Emacs configuration.
+While I know my current <code>emacs.org</code> file pretty well, I'm not fully satisfied with it.
+For example, I have evil and evil-leader installed, but I only have 5 shortcuts configured for use with evil-leader and I don't have any of the evil keybindings installed.
+</p>
+
+<p>
+I hope that you find this journey useful. Below will be links to all of the various posts of the year, so you can return to this post for updates as the year goes on.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2019-05-25</span>
+        <span title="last modification date" class="post-info">2019-06-09</span>
+        <span title="tags" class="post-info">N/A</span>
+        <span title="author" class="post-info">Jonathan Bennett</span>
+      </div>
+      <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="https://jonathanabennett.github.io/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+        <p>
+          Copyright &copy; <span id="footerYear"></span> <a href="mailto:doulos05 &lt;at&gt; gmail &lt;dot&gt; com">Jonathan Bennett</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/tumashu/org2web" target="_blank">org2web</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+</div>
+</body>
+</html>

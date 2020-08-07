@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Python and Emacs Pt. 1 - Jonathan Bennett&#39;s Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jonathan Bennett" />
+    <link rel="stylesheet" href="https://jonathanabennett.github.io/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://jonathanabennett.github.io/media/css/prettify.css" type="text/css">
+  </head>
+<body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="https://jonathanabennett.github.io/">Jonathan Bennett&#39;s Blog</a> <span class="subtitle">Emacs, Python, and Education</span></h1>
+        <ul>
+          <li><a href="https://jonathanabennett.github.io/blog/">Blog</a></li>
+          <li><a href="https://jonathanabennett.github.io/posts/">Posts</a></li>
+          <li><a href="https://jonathanabennett.github.io/tags/">Tags</a></li>
+          <li><a href="https://jonathanabennett.github.io/about/">About</a></li>
+          <li><a href="https://github.com/jonathanabennett/jonathanabennett.github.io.git">Github</a></li>
+          <li><a href="https://jonathanabennett.github.io/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="jonathanabennett.github.io">
+        </form>
+      </header>
+    </div>
+
+<div class="content-and-footer">
+<div>
+<div class="post">
+<h1 class="post-title">Python and Emacs Pt. 1</h1>
+
+<div id="outline-container-orgb670659" class="outline-2">
+<h2 id="orgb670659">Python</h2>
+<div class="outline-text-2" id="text-orgb670659">
+<p>
+Python is my programming language of choice.
+I first started learning Python in the early 2000's and it was the first programming language which just "clicked" for me.
+</p>
+
+<p>
+I have never worked on large projects before, though some of my person projects have grown fairly large.
+So I cannot speak to the effectiveness of Emacs as an IDE for large projects, I can tell you that I use it for Python all the time.
+</p>
+
+<p>
+Today, we will focus on getting the code linting, auto-completion, and other sorts of features you find in a traditional IDE into Emacs.
+This includes a (very) brief introduction to Magit.
+The next post on programming and Emacs will focus much more heavily on Magit, because Magit is (as far as I can tell) the best part of Emacs when it comes to programming.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org40f5fde" class="outline-2">
+<h2 id="org40f5fde">Setting Up Python</h2>
+<div class="outline-text-2" id="text-org40f5fde">
+<p>
+This guide assumes you have used Homebrew to install Python 3.7 and then promptly installed pyenv and pipenv.
+Pipenv, among other things, allows you to handle virtual environments easily, making it an excellent tool if you are working on multiple projects.
+Pyenv allows you to handle multiple versions of Python easily, making it an excellent tool if you are working on both modern and legacy python codebases.
+</p>
+
+<p>
+Pyenv is also nice because it lets you ignore the system Python.
+The system Python on most computers is out of date. 
+Even in those cases where it isn't, surprising things may depend on that system version of Python.
+Making sweeping changes to it can cause your computer to misbehave in subtle and unexpected ways.
+Whenever possible, you should leave your system Python alone, installing the minimal possible number of packages into it.
+</p>
+</div>
+
+<div id="outline-container-orgf98a546" class="outline-3">
+<h3 id="orgf98a546">Installing Modern Python</h3>
+<div class="outline-text-3" id="text-orgf98a546">
+<p>
+As the guys at Podcast.__init__() and PythonBytes like to say, Python 3 is modern Python. Python 2 is legacy Python.
+</p>
+
+<p>
+Legacy Python is perfectly acceptable for maintain legacy codebases, but new code should be written using the modern version of the language.
+As of this writing, the latest stable release is 3.7.3, with a release of 3.8.0 pending in a few months.
+Python 3.7 adds a lot of excellent new features, with 3.8 promising even more.
+Pick what you need, or what you want, but if at all possible, try to work with modern versions of the langauge.
+If not, you're not just missing out on new features, you could be exposing your code to bugs (especially in your 3rd party libraries) once legacy Python is no longer supported in 2020.
+</p>
+
+<p>
+To get a setup similar to the one I'm running right now, run the following commands in your terminal.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">brew install python3
+curl https://pyenv.run | bash
+pyenv install 3.7.3
+pyenv global 3.7.3
+pip install --upgrade pip
+pip install pipenv
+</pre>
+</div>
+
+<p>
+I've chosen to use <code>pipenv</code> for package management for a few reasons, but the primary one is that it plays nicely with Emacs.
+In order to use the linting and code completion features of Jedi, Flake8, et al, Emacs needs those libraries installed.
+But I don't want those installed in the final version of code that I push out to Heroku.
+<code>pipenv</code> lets you have virtual environments for each project which are only activated when you ask for them via <code>pipenv shell</code> or <code>pipenv run &lt;command&gt;</code>.
+That way, Emacs can leave its virtual environment with all the code linters installed active by default and I can activate the virtualenv with my project specific libraries when I test or run my code.
+</p>
+
+<p>
+I'm still working on this particular workflow because it is brand new to me.
+In fact, as early as last week I was relying on pyenv's virtualenv features to handle this for me.
+So expect a more detailed writeup on this shortly.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org148a76c" class="outline-2">
+<h2 id="org148a76c">Setting up Emacs</h2>
+<div class="outline-text-2" id="text-org148a76c">
+<p>
+Before we can set up Emacs fully, we have one last command we need to run.
+I installed the Emacs dependencies directly into my global python (the 3.7.3 install).
+This is less than ideal, but it was the simplest.
+Should the opportunity arise later this summer, I will likely nuke my global python and try to put the Emacs dependencies into their own virtual environment.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">pip install jedi flake8 autopep8 black yapf
+</pre>
+</div>
+
+<p>
+Having installed your dependencies, it's time to set up Emacs.
+</p>
+</div>
+
+<div id="outline-container-org111efe7" class="outline-3">
+<h3 id="org111efe7">elpy</h3>
+<div class="outline-text-3" id="text-org111efe7">
+<p>
+Elpy is adds features to the default Python mode.
+Most importantly, it adds support for autocompletion via Jedi.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">  (<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">elpy</span>
+    <span style="color: #ffb86c;">:init</span>
+    (add-to-list 'auto-mode-alist '(<span style="color: #f1fa8c;">"\\.py$"</span> . python-mode))
+    <span style="color: #ffb86c;">:custom</span>
+    (elpy-rpc-backend <span style="color: #f1fa8c;">"jedi"</span>))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd1bdd1d" class="outline-3">
+<h3 id="orgd1bdd1d">Python Mode</h3>
+<div class="outline-text-3" id="text-orgd1bdd1d">
+<p>
+This configures the base package for python.
+Because this is a built-in, we need <code>:ensure nil</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">  (<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">python</span>
+  <span style="color: #ffb86c;">:ensure</span> nil
+  <span style="color: #ffb86c;">:mode</span> (<span style="color: #f1fa8c;">"\\.py"</span> . python-mode)
+  <span style="color: #ffb86c;">:config</span>
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> python-indent-offset 4)
+  (elpy-enable))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7d2aca1" class="outline-3">
+<h3 id="org7d2aca1">Company</h3>
+<div class="outline-text-3" id="text-org7d2aca1">
+<p>
+Company is the auto-completion framework that I use.
+Start typing and it will attempt to auto-complete your words if you pause for a second.
+The current setup is very basic, but I'll be adding more to it.
+Specifically, I want to switch from Enter to tab to complete.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">  (<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">company</span>
+    <span style="color: #ffb86c;">:ensure</span> t
+    <span style="color: #ffb86c;">:defer</span> t
+    <span style="color: #ffb86c;">:diminish</span> (company-mode . <span style="color: #f1fa8c;">" &#9424;"</span>)
+    <span style="color: #ffb86c;">:init</span>
+    (global-company-mode)
+    <span style="color: #ffb86c;">:config</span>
+    (<span style="color: #ff79c6; font-weight: bold;">setq</span> company-tooltip-align-annotations t
+          company-idle-delay 0.2
+          <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">min prefix of 2 chars</span>
+          company-minimum-prefix-length 2
+          company-require-match nil))
+
+  (<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">company-quickhelp</span>          <span style="color: #6272a4;">; </span><span style="color: #6272a4;">Show help in tooltip</span>
+    <span style="color: #ffb86c;">:ensure</span> t
+    <span style="color: #ffb86c;">:defer</span> t
+    <span style="color: #ffb86c;">:init</span> (<span style="color: #ff79c6; font-weight: bold;">with-eval-after-load</span> 'company
+            (company-quickhelp-mode)))
+
+  (<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">company-jedi</span>
+    <span style="color: #ffb86c;">:ensure</span> t
+    <span style="color: #ffb86c;">:defer</span> t
+    <span style="color: #ffb86c;">:init</span>
+    (<span style="color: #ff79c6; font-weight: bold;">defun</span> <span style="color: #50fa7b; font-weight: bold;">enable-jedi</span>()
+      (<span style="color: #ff79c6; font-weight: bold;">setq-local</span> company-backends
+                  (append '(company-jedi) company-backends)))
+    (<span style="color: #ff79c6; font-weight: bold;">with-eval-after-load</span> 'company
+      (add-hook 'python-mode-hook 'enable-jedi)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org62229dc" class="outline-3">
+<h3 id="org62229dc">Initial Setup</h3>
+<div class="outline-text-3" id="text-org62229dc">
+<p>
+After you've set this up, the very next thing you need to do is <code>M-x jedi:install-server</code>.
+Once you've finished this, you've got a solid Python editor in Emacs, and it took surprisingly little setup.
+</p>
+
+<p>
+Follow up tutorials will cover various aspects of working with Python, but for now this is where we're starting.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org21942c7" class="outline-2">
+<h2 id="org21942c7">Wait, that's it?</h2>
+<div class="outline-text-2" id="text-org21942c7">
+<p>
+Well, right now yes. There will be more in a future week, but I literally just discovered and started working with pipenv 3 days ago.
+I need a little more time to flesh out my workflow there.
+Expect more and longer posts on Python over the following months as I explore Python and Emacs more fully.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2019-06-20</span>
+        <span title="last modification date" class="post-info">2019-06-20</span>
+        <span title="tags" class="post-info">N/A</span>
+        <span title="author" class="post-info">Jonathan Bennett</span>
+      </div>
+      <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="https://jonathanabennett.github.io/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+        <p>
+          Copyright &copy; <span id="footerYear"></span> <a href="mailto:doulos05 &lt;at&gt; gmail &lt;dot&gt; com">Jonathan Bennett</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/tumashu/org2web" target="_blank">org2web</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+</div>
+</body>
+</html>

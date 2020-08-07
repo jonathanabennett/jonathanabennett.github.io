@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Writing Academic Papers with Org-mode - Jonathan Bennett&#39;s Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jonathan Bennett" />
+    <link rel="stylesheet" href="https://jonathanabennett.github.io/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://jonathanabennett.github.io/media/css/prettify.css" type="text/css">
+  </head>
+<body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="https://jonathanabennett.github.io/">Jonathan Bennett&#39;s Blog</a> <span class="subtitle">Emacs, Python, and Education</span></h1>
+        <ul>
+          <li><a href="https://jonathanabennett.github.io/blog/">Blog</a></li>
+          <li><a href="https://jonathanabennett.github.io/posts/">Posts</a></li>
+          <li><a href="https://jonathanabennett.github.io/tags/">Tags</a></li>
+          <li><a href="https://jonathanabennett.github.io/about/">About</a></li>
+          <li><a href="https://github.com/jonathanabennett/jonathanabennett.github.io.git">Github</a></li>
+          <li><a href="https://jonathanabennett.github.io/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="jonathanabennett.github.io">
+        </form>
+      </header>
+    </div>
+
+<div class="content-and-footer">
+<div>
+<div class="post">
+<h1 class="post-title">Writing Academic Papers with Org-mode</h1>
+
+<div id="outline-container-org1faa1d8" class="outline-2">
+<h2 id="org1faa1d8">Configs at the End</h2>
+<div class="outline-text-2" id="text-org1faa1d8">
+<p>
+If you want to copy this workflow exactly, I will have all of the relevant configuration at the end of this document in a single source block.
+Just change the paths appropriately and you're good to go.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org679ce90" class="outline-2">
+<h2 id="org679ce90">The Reason I'm Here</h2>
+<div class="outline-text-2" id="text-org679ce90">
+<p>
+Rewind 1 year.
+I've got an i3 window with Vim on the left and a shell on the right up on my screen, with evince open on desktop 2 so I can see the output.
+I'm up to my ears in LaTeX, and things aren't making nearly as much sense as I think they should be.
+I'm designing the final exam which my students will sit in 1 week's time, and it's just not as easy as I'd like it to be.
+</p>
+
+<p>
+Actually, though, the problem isn't LaTeX.
+Well, that's one of the problems, but it isn't the main one.
+The main problem I'm having is context switches.
+</p>
+
+<p>
+Vim does not work smoothly with external processes.
+Now, you can (with work) make Vim work with external processes, but it isn't a simple task.
+If I were writing Vim's report card, it would include a sentence like, "Vim needs to practice playing cooperatively with others."
+</p>
+
+<p>
+So when I knew that I would be embarking on a Masters, priority number 1 was finding a text-based flow that would let me write my thesis in plain text and export it for my professor. Enter Emacs.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5369140" class="outline-2">
+<h2 id="org5369140">Why Plaintext?</h2>
+<div class="outline-text-2" id="text-org5369140">
+<p>
+For the sake of those who stumbled onto this blog post by typing "How to write an academic paper" into your search engine of choice, let me explain briefly why I <b>didn't</b> want to write my paper in Google Docs or Microsoft Word.
+</p>
+
+<p>
+Google Docs is a great Word Processor.
+We have used it at every school I have worked at in the last 5 years to great effect.
+It is simple, convenient, and reasonably quick.
+</p>
+
+<p>
+It also excels at seamless collaboration.
+While a group of technically minded adults would have no problem collaborating using git, that isn't seamless and it isn't something you can get every single 6th grader in your school to do correctly every time.
+</p>
+
+<p>
+But it falls down for long, complex documents which undergo multiple iterations.
+I took my Masters from a list of possible ideas to a complete paper in a single document (plus a few supporting documents for doing statistical analysis).
+Not only that, I can easily go back to any previous iteration of that process using <code>git</code>.
+Finally, I can be certain that the charts and tables in my paper are correct and current every time because they are generated fresh from the actual data every time I export my paper.
+</p>
+</div>
+<div id="outline-container-orgc58bf64" class="outline-3">
+<h3 id="orgc58bf64">Why org-mode?</h3>
+<div class="outline-text-3" id="text-orgc58bf64">
+<p>
+Now all of this is also possible in LaTeX.
+In fact, LaTeX is the intermediary step that my paper goes through on the way to the finished product.
+So why not just write it in LaTeX?
+</p>
+
+<p>
+Well, there are a few reasons why  I went with org-mode over LaTeX.
+</p>
+</div>
+<div id="outline-container-orgcf9c070" class="outline-4">
+<h4 id="orgcf9c070">Familiarity</h4>
+<div class="outline-text-4" id="text-orgcf9c070">
+<p>
+I use org-mode every day.
+My schedule is in org-mode (exported to .ics so that my Google calendar is up to date and visible to my colleagues).
+My plans, projects, and TODO lists are in org-mode.
+I take notes during class in org-mode.
+I write this blog in org-mode.
+</p>
+
+<p>
+LaTeX, on the other hand, I have very little experience with. I have used it a little bit for building tests and things, but not enough to be fluent in it.
+Since I would also be learning a new writing environment setup, I decided to reduce the number of new things I needed to learn.
+</p>
+</div>
+</div>
+<div id="outline-container-org5c89d66" class="outline-4">
+<h4 id="org5c89d66">Integrates with my TODO list</h4>
+<div class="outline-text-4" id="text-org5c89d66">
+<p>
+Because my paper is an org-mode document, I can simply put TODO at the beginning of a section header and that section shows up in my org-agenda task list.
+This allowed me to outline my document, schedule when I planned to research, write, and proofread each section.
+</p>
+</div>
+</div>
+<div id="outline-container-org02ac521" class="outline-4">
+<h4 id="org02ac521">Export to multiple formats</h4>
+<div class="outline-text-4" id="text-org02ac521">
+<p>
+LaTeX is usually used to export to PDF.
+I believe there are ways to export LaTeX to HTML or other formats, but I haven't ever used them.
+Org-mode exports to almost everything.
+</p>
+</div>
+</div>
+<div id="outline-container-org983f799" class="outline-4">
+<h4 id="org983f799">org-ref</h4>
+<div class="outline-text-4" id="text-org983f799">
+<p>
+The deciding factor for me was the package org-ref.
+I'll talk more about it now, but allowing me to use the Helm incremental search to filter my library for the exact source I wanted to cite, then insert that citation in the right spot and add it to the bibliography automatically was brilliant.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org985eb91" class="outline-2">
+<h2 id="org985eb91">The Toolchain</h2>
+<div class="outline-text-2" id="text-org985eb91">
+</div>
+<div id="outline-container-orgd3ae07a" class="outline-3">
+<h3 id="orgd3ae07a">Zotero for Library Management</h3>
+<div class="outline-text-3" id="text-orgd3ae07a">
+<p>
+While there are definitely Emacs tools for library management, Zotero excels at this particular task.
+With Zotero, I can drag a PDF sourced from <a href="https://www.researchgate.net">Research Gate</a> or another source, drag and drop it on the Zotero window, and it will autopopulate the bibliographic information.
+Additionally, it can generate citations for books from just the ISBN number, websites from just the web address, and lots of other sources.
+Finally, you can install the Zotero plugin for Firefox or Chrome and get citations into Zotero with the click of a button.
+</p>
+</div>
+
+<div id="outline-container-org7001762" class="outline-4">
+<h4 id="org7001762">Installation</h4>
+<div class="outline-text-4" id="text-org7001762">
+<p>
+Download <a href="https://www.zotero.org/">Zotero</a> from their website.
+While you are there, go ahead and sign up for a free account.
+That way, you can easily transfer your library from computer to computer should you need to.
+You will also need to download the <a href="https://retorque.re/zotero-better-bibtex/installation/">Zotero Better Bibtex</a> Plugin.
+You may also want to grab the appropriate plugin for your browser of choice and the <a href="https://github.com/willsALMANJ/Zutilo">Zutilo</a> plugin, but these two tools are optional.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeaed91e" class="outline-4">
+<h4 id="orgeaed91e">Configuration</h4>
+<div class="outline-text-4" id="text-orgeaed91e">
+<p>
+Now, you need to set up Zotero so that it creates the .bib file you plan to use for your paper.
+I have two bibliography files on my computer. A master file located in my home directory and a project-specific file located in my project's folder.
+The reason for this is two-fold.
+</p>
+<ol class="org-ol">
+<li>I want each project to have its own .bib file so that if someone downloads the project from the internet, they have the resources to build the PDF from the github repo.</li>
+<li>I want a fallback in case a specific project doesn't yet have a .bib file associated with it.</li>
+</ol>
+
+<p>
+Whether you choose to have a master .bib file for all your projects or individual .bib files for each project, it is important that your .bib files stay in sync with your Zotero library.
+That's one of the main reasons for downloading the Better Bibtex plugin.
+One of the features of Better Bibtex is the ability to keep an exported .bib file up to date.
+</p>
+
+<p>
+Here's what you need to do in order to get a .bib file in your project directory that stays up to date.
+</p>
+<ol class="org-ol">
+<li>In Zotero, click File -&gt; Export Library</li>
+<li>For the format, be sure to select "Better Bibtex"</li>
+<li>Make sure you check the box "Keep Updated".</li>
+<li>For the save file dialog, put your file in your project directory with a reasonable name. I usually use <code>library.bib</code>.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orge6c5269" class="outline-4">
+<h4 id="orge6c5269">Using Zotero</h4>
+<div class="outline-text-4" id="text-orge6c5269">
+<p>
+To get a citation into Zotero, the easiest way is to drag and drop the PDF of the paper or article onto the Zotero window.
+Zotero will then detect as much of the bibliographic data as possible (for older PDFs without OCR, this may be incomplete) and create a new entry.
+It will also copy the PDF into a folder in its own directory, so you can safely delete the PDF which you downloaded.
+Finally, if you have completed the configuration above, it will automatically export that library item into your library.bib file, making it available for searching and citing in Emacs.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org734f181" class="outline-4">
+<h4 id="org734f181">Limitations of Zotero</h4>
+<div class="outline-text-4" id="text-org734f181">
+<p>
+Zotero is excellent for library management.
+But their notes interface leaves much to be desired for someone who is used to working with the Emacs/org-mode workflow.
+I would not recommend keeping any notes in Zotero.
+The whole goal of this toolchain is to use the best tool for each of the jobs.
+Zotero is the best tool for library management, but it is not the best tool for taking notes about the papers and books in your library.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org2074acf" class="outline-3">
+<h3 id="org2074acf">PDF-Tools for Reading your Papers</h3>
+<div class="outline-text-3" id="text-org2074acf">
+<p>
+Now that you've found some sources for your paper, you need to read them.
+Not only should you read them, you also need to keep notes on them to simplify writing your paper.
+For this, pdf-tools and helm-bibtex are excellent resources.
+</p>
+</div>
+<div id="outline-container-orgbf08cb5" class="outline-4">
+<h4 id="orgbf08cb5">Installation (MacOS)</h4>
+<div class="outline-text-4" id="text-orgbf08cb5">
+<p>
+Installing PDF-tools on a Mac is, sadly, not as straight-forward as it should be.
+The instructions for doing so are found <a href="https://github.com/politza/pdf-tools#compiling-on-os-x">here</a>.
+</p>
+
+<p>
+The part that is missing (or at least potentially unclear is where you should define the <code>pkg_config_path</code> environment variable.
+This can be defined in your shell rc file (.bash_profile or .zshenv), but if you do that you will need to use <code>exec-path-from-shell</code> to bring it into Emacs.
+Alternatively, this can be defined inside Emacs, but then it would not be available outside of Emacs.
+I elected to define it in my .zshenv file, in case I end up needed it elsewhere.
+In that case, you need the following in your init.elected
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">exec-path-from-shell</span>
+  <span style="color: #ffb86c;">:custom</span>
+  (shell-file-name <span style="color: #f1fa8c;">"path/to/your/shell"</span> <span style="color: #f1fa8c;">"This is necessary because some Emacs install overwrite this variable"</span>)
+  (exec-path-from-shell-variables '(<span style="color: #f1fa8c;">"PATH"</span> <span style="color: #f1fa8c;">"MANPATH"</span> <span style="color: #f1fa8c;">"PKG_CONFIG_PATH"</span>) <span style="color: #f1fa8c;">"This adds PKG_CONFIG_PATH to the list of variables to grab. I prefer to set the list explicitly so I know exactly what is getting pulled in."</span>)
+  <span style="color: #ffb86c;">:init</span>
+  (<span style="color: #ff79c6; font-weight: bold;">if</span> (string-equal system-type <span style="color: #f1fa8c;">"darwin"</span>)
+    (exec-path-from-shell-initialize)))
+</pre>
+</div>
+
+<p>
+This is not included in the big init.el dump at the end because there's another way to get this into Emacs, simply <code>(setenv "PKG_CONFIG_PATH" "/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig")</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org891e938" class="outline-4">
+<h4 id="org891e938">Workflow</h4>
+<div class="outline-text-4" id="text-org891e938">
+<p>
+When in an org document (any document will do, but typically you would do this in your paper), pressing <code>C-c ]</code> will open the helm-bibtex menu.
+From here, you'll be presented with a list of all of the items in your library.
+Use the helm incremental search to find the item you're looking for.
+</p>
+
+<p>
+This view is the center of your citation/annotation workflow.
+From here, you can choose a library item to insert as a citation.
+You can open it in your PDF Viewer (If you're using pdf-tools as I recommend, that will be Emacs).
+You can also open an associated notes file, which would open an org file.
+I originally used this workflow because I could not get pdf-tools working correctly on my Mac.
+But making highlights and annotations directly into the PDF has the advantage of being transferable to collaborators and other computers which may not have Emacs set up on them.
+So my workflow right now does not use the notes file.
+</p>
+
+<p>
+That said, I did find it useful to be able to write the lit review for each paper directly into an org file and then use <code>M-x org-copy-subtree</code> to put it directly into my paper at the appropriate spot.
+For now, though, collaborative concerns outweigh that convenience.
+</p>
+
+<p>
+Since right now, we are taking notes, we want to open the PDF.
+So we search for the PDF, press &lt;Tab&gt;, and then &lt;F2&gt;.
+Assuming you have PDF-tools setup onyour computer, you should now have the PDF in Emacs.
+</p>
+
+<p>
+From here, you can read the document and make annotations directly in the PDF.
+This is the only part of my workflow which requires me to take my hands off the keyboard as pdf-tools interacts with the specific parts of the PDF via mouse events.
+</p>
+
+<p>
+But in short, you can highlight a relevant passage and press <code>C-c C-a h</code> to add a highlight.
+This pops up a mini-buffer where you can add your notes regarding the highlighted section.
+Alternatively, you can press <code>C-c C-a t</code> to add a text annotation which appears as a small sticky note on the screen.
+I found those useful for annotating charts and tables.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org648a7c0" class="outline-3">
+<h3 id="org648a7c0">Org-mode and org-ref for Writing Your Paper</h3>
+<div class="outline-text-3" id="text-org648a7c0">
+<p>
+You've found your sources, you've annotated them, and now it's time to write your paper.
+For this, org-mode is magnificent, especially when coupled with org-ref and helm-bibtex.
+I suspect the same would be true of ivy's bibtex plugin, but I like helm.
+</p>
+</div>
+<div id="outline-container-orga89b258" class="outline-4">
+<h4 id="orga89b258">The Tools</h4>
+<div class="outline-text-4" id="text-orga89b258">
+</div>
+<div id="outline-container-org5ceabac" class="outline-5">
+<h5 id="org5ceabac">Org-mode</h5>
+<div class="outline-text-5" id="text-org5ceabac">
+<p>
+Org-mode rocks, pure and simple.
+When writing a paper, you use the headers to represent the various sections, headers, and sub-headers of your paper.
+There are some modifications needed in order to export your work, especially if you're working in the humanities and need to publish in APA6 format.
+The modifications needed in your init.el are listed below in the code snippet, but you'll need a specific header for your document as well.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #6272a4;">#+TITLE:</span> <span style="color: #ffb86c; font-size: 144%; font-weight: bold;">&lt;Insert Title Here&gt;</span>
+<span style="color: #6272a4;">#+AUTHOR:</span> <span style="color: #0189cc;">&lt;Your Name Here</span>
+<span style="color: #6272a4;">#+BIBILOGRAPHY: library.bib </span>
+<span style="color: #6272a4;">#+LaTeX_class: apa6</span>
+<span style="color: #6272a4;">#+LaTeX_CLASS_OPTIONS: [a4paper]</span>
+<span style="color: #6272a4;">#+LaTeX_HEADER: \affiliation{&lt;Your school, think tank, etc&gt;}</span>
+<span style="color: #6272a4;">#+LaTeX_HEADER: \shorttitle{&lt;A short version of the long title for page headers&gt;}</span>
+<span style="color: #6272a4;">#+LaTeX_HEADER: \usepackage{breakcites}</span>
+<span style="color: #6272a4;">#+LaTeX_HEADER: \usepackage{apacite}</span>
+<span style="color: #6272a4;">#+LaTeX_HEADER: \usepackage{paralist}</span>
+<span style="color: #6272a4;">#+LaTeX_HEADER: \let\itemize\compactitem</span>
+<span style="color: #6272a4;">#+LaTeX_HEADER: \let\description\compactdesc</span>
+<span style="color: #6272a4;">#+LaTeX_HEADER: \let\enumerate\compactenum</span>
+
+<span style="color: #6272a4;">#+BEGIN_ABSTRACT</span>
+
+<span style="font-weight: bold;">*Abstract*</span>
+
+You cannot use an org-mode header here.
+If you do, it trashes the table of contents for the apa6 document class.
+That's why Abstract is bolded manually. 
+
+As you can see, I write my documents 1 sentence to a line.
+This is because I keep these documents under version control.
+A single English sentence is similar to a single line of code.
+You wouldn't run lines of code together in a production codebase, so don't run sentences together in a VC'ed text document.
+
+Latex and org-mode both interpret a single empty line as a paragraph break, so the fact that your source document is 1 sentence per line will not be visible to anybody other than you.
+<span style="color: #6272a4;">#+END_ABSTRACT</span>
+<span style="color: #6272a4;">#+LaTeX: \tableofcontents</span>
+</pre>
+</div>
+
+<p>
+This initializes a number of LaTeX options and headers. Let's take them one by one.
+</p>
+
+<ol class="org-ol">
+<li>BIBLIOGRAPHY: This should be the path to the file that Zotero is exporting to.
+I always point this to the one inside the project directory rather than the master document saved in my home directory.</li>
+<li>LaTeX_CLASS and LaTeX_CLASS_OPTIONS: Together these define the LaTeX class of the document.
+They are used as follows in the command: <code>\documentclass{$LaTeX_CLASS}$LaTeX_CLASS_OPTIONS.</code>
+Note that LaTeX_CLASS_OPTIONS <b>must</b> be inside brackets.</li>
+<li>LaTeX_HEADER: These make macro calls or set variables which should be done in the header of the LaTeX document (In other words, before the content of the document begins).
+There are a number of these here.
+The variables are self-descriptive, but I will describe the packages below.</li>
+<li><code>\usepackage{breakcites}</code>: This allow citations to word wrap.
+It may not be strictly necessary, but I thought it made the paper look nicer.</li>
+<li><code>\usepackage{apacite}</code>: This is necessary for apa6 compliant citations.</li>
+<li><code>\usepackage{paralist}</code>: Default LaTeX lists take up far too much space.
+This package reduces that.</li>
+<li><code>\let\itemize\compactitem</code>: This replaces the default <code>\item</code> call with <code>\compactitem</code> from <code>paralist</code></li>
+<li><code>\let\description\compactdesc</code> and <code>\let\enumerate\compactenum</code>: Same as above</li>
+</ol>
+
+<p>
+Next, you write your abstract.
+Wrap it in <code>#+begin_abstract</code> and <code>#+end_abstract</code> so that the apa6 class can find it.
+</p>
+
+<p>
+Finally, add <code>#+LaTeX: \tableofcontents</code> to place your table of contents.
+Note that this is <code>#+LaTeX</code>, <b>not</b> <code>#+LaTeX_HEADER</code>.
+</p>
+
+<p>
+The last thing you should add is at the very end of your paper.
+You should add the following two lines so that org-ref can build your bibliography.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #8be9fd; text-decoration: underline;"><a href="bibliographystyle:apacite">bibliographystyle:apacite</a></span>
+<span style="color: #ffb86c; background-color: #373844;"><a href="bibliography:library.bib">bibliography:library.bib</a></span>
+</pre>
+</div>
+
+<p>
+If your paper should use a different citation style, you should import different packages at the top and use a different <code>bibliographystyle</code> at the end.
+If you are using the APA6 class, <b>do not</b> put the bibliography in its own header.
+If you do, your PDF will have two headers for your bibliography.
+It is annoying that your bibliography goes inside the final header of your Conclusions section, but it is necessary.
+That may not be the case for other document classes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd5c4dd8" class="outline-5">
+<h5 id="orgd5c4dd8">Org-ref</h5>
+<div class="outline-text-5" id="text-orgd5c4dd8">
+<p>
+Org-ref allows you to manage citations in org-mode.
+Getting started in org-ref is like getting started in helm or magit.
+It's intimidating at the beginning, but you don't need to understand all of it in order to handle writing your paper.
+In fact, much of the setup needed has already been described above (with the exception of init.el requirements).
+</p>
+
+<p>
+To use org-ref, you'll press <code>C-c ]</code> as you did when preparing to annotate.
+Search by author name, article name, publication date... Basically anything in the .bib entry for the article.
+Should you need to select more than article to cite, <code>C-&lt;space&gt;</code> marks an article for citation.
+Once you've selected the article(s) you want to cite, you'll can press <code>&lt;Enter&gt;</code> and insert the default citation (which is typically what you want).
+If you need an alternative citation format (perhaps one without parentheses), pressing <code>&lt;C-u Enter&gt;</code> will get you the list of all possible citation formats.
+There are lots, I didn't try them all.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org332311b" class="outline-3">
+<h3 id="org332311b">Git to Track the Changes to Your Paper</h3>
+<div class="outline-text-3" id="text-org332311b">
+<p>
+Git is a distributed version control program.
+It allows you to track different versions of the files in a directory.
+When writing a paper, it allows you to go back to that version of the lit review that the professor liked, but keep all the work you've done on the methodology.
+It also lets you back up your paper easily (and for free) to Github, Bitbucket, Gitlab, or other remote git forges.
+I had to reformat my Mac halfway through my paper.
+I was able to work on it using a school desktop while waiting to get the Mac back, and sync all the changes back to Bitbucket and the Mac easily when IT was finished.
+</p>
+</div>
+
+<div id="outline-container-orgf7db821" class="outline-4">
+<h4 id="orgf7db821">Magit</h4>
+<div class="outline-text-4" id="text-orgf7db821">
+<p>
+I used Magit for all my git committing, pushing, etc when writing this paper.
+But that is beyond the scope of this post.
+At a later date, I will explain how I use Magit for work.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6abc6a3" class="outline-3">
+<h3 id="org6abc6a3">Exporting with LaTeX</h3>
+<div class="outline-text-3" id="text-org6abc6a3">
+<p>
+Assuming you have following the instructions to this point, when you are ready to export a version of your paper, you simply press <code>C-c C-e l o</code> and your new version will open.
+Currently, mine opens in Apple's PDF viewer.
+I believe that is because the LaTeX command calls an outside process, so it uses the system default PDF reader.
+In any case, I don't typically annotate my own papers, so that's not a serious issue for me.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org32a9fc8" class="outline-2">
+<h2 id="org32a9fc8">Setting it up</h2>
+<div class="outline-text-2" id="text-org32a9fc8">
+<p>
+Below are all of the relevant parts of my init.el.
+These differ slightly from the one posted earlier this week because they have been updated and tweaked to reflect changes I made as I reflected on how this process worked for me.
+For packages which are mandatory for this to work but which don't have any configuration specific to this task, I have simply included the shortest possible configuration for them.
+If you want to know more about how I use those packages, take a look at the blog entries specific to those packages.
+This assumes that you use <code>use-package</code>, if you don't, you'll need to heavily adapt what you see here.
+</p>
+</div>
+
+<div id="outline-container-orgb03be41" class="outline-3">
+<h3 id="orgb03be41">Initial Setup</h3>
+<div class="outline-text-3" id="text-orgb03be41">
+<p>
+<code>package</code> and <code>use-package</code> setup.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">  (<span style="color: #ff79c6; font-weight: bold;">require</span> '<span style="color: #8be9fd;">package</span>)
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> package-enable-at-startup nil)
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> package-archives '((<span style="color: #f1fa8c;">"org"</span>  . <span style="color: #f1fa8c;">"http://orgmode.org/elpa/"</span>)
+                          (<span style="color: #f1fa8c;">"gnu"</span>   . <span style="color: #f1fa8c;">"http://elpa.gnu.org/packages/"</span>)
+                          (<span style="color: #f1fa8c;">"melpa"</span> . <span style="color: #f1fa8c;">"http://melpa.org/packages/"</span>)))
+  (package-initialize)
+
+  (<span style="color: #ff79c6; font-weight: bold;">unless</span> (package-installed-p 'use-package)
+    (package-refresh-contents)
+    (package-install 'use-package))
+  (<span style="color: #ff79c6; font-weight: bold;">require</span> '<span style="color: #8be9fd;">use-package</span>)
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> use-package-always-ensure t)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org23dab06" class="outline-3">
+<h3 id="org23dab06">Exec-path-from-shell</h3>
+<div class="outline-text-3" id="text-org23dab06">
+<p>
+As part of their ongoing war against developers, the Captains of industry in Cupertino have designed Macs so that GUI Emacs only ever reads environment variables from the default shell.
+This is obviously user hostile behavior since their system shell (bash) is from 2007, so nobody should use that shell.
+This package is designed to work around this.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">exec-path-from-shell</span>
+  <span style="color: #ffb86c;">:custom</span>
+  (shell-file-name <span style="color: #f1fa8c;">"/usr/local/bin/zsh"</span>)
+  (exec-path-from-shell-variables '(<span style="color: #f1fa8c;">"PATH"</span> <span style="color: #f1fa8c;">"MANPATH"</span> <span style="color: #f1fa8c;">"PKG_CONFIG_PATH"</span>)
+  <span style="color: #ffb86c;">:init</span>
+  (<span style="color: #ff79c6; font-weight: bold;">if</span> (string-equal system-type <span style="color: #f1fa8c;">"darwin"</span>)
+      (exec-path-from-shell-initialize)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7243a00" class="outline-3">
+<h3 id="org7243a00">Helm</h3>
+<div class="outline-text-3" id="text-org7243a00">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">  (<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">helm</span>
+    <span style="color: #ffb86c;">:init</span>
+    (<span style="color: #ff79c6; font-weight: bold;">setq</span> helm-split-window-default-side 'other)
+    (helm-mode 1))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgff4090c" class="outline-3">
+<h3 id="orgff4090c">Org-mode</h3>
+<div class="outline-text-3" id="text-orgff4090c">
+<p>
+Org-mode is the thing that brought me to Emacs.
+There are a lot of customizations here.
+</p>
+</div>
+<div id="outline-container-org0fc366b" class="outline-4">
+<h4 id="org0fc366b">Org QoL</h4>
+<div class="outline-text-4" id="text-org0fc366b">
+<p>
+This handles the Quality of life part of Org-mode.
+First, org-bullets beautifies the leading asterisks.
+Then, we hide the extra asterisks.
+Finally, we set the global shortcuts for org-store-link, org-agenda, and org-capture.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">  (<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">org-bullets</span>
+    <span style="color: #ffb86c;">:custom</span>
+    (org-hide-leading-stars t)
+    <span style="color: #ffb86c;">:hook</span> org)
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga835f25" class="outline-4">
+<h4 id="orga835f25">Academic Paper Writing</h4>
+<div class="outline-text-4" id="text-orga835f25">
+<p>
+Here are the settings I have used for writing academic papers.
+I write my papers in orgmode, then export them to PDF via LaTeX.
+This is one of the most fleshed out areas of my dotfiles, in large part because 90% of my Emacs time for the last 6 months has been related to my Master's Thesis in some way.
+</p>
+
+<p>
+This sets the default bibtex file.
+I rarely use this in real projects.
+Most projects set their own bibliography.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">  (<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">helm-bibtex</span>
+    <span style="color: #ffb86c;">:custom</span>
+    (helm-bibtex-bibliography '(<span style="color: #f1fa8c;">"~/zotero.bib"</span>))
+    (reftex-default-bibliography '(<span style="color: #f1fa8c;">"~/zotero.bib"</span>))
+    (bibtex-completion-pdf-field <span style="color: #f1fa8c;">"file"</span>)
+    <span style="color: #ffb86c;">:hook</span> (Tex . (<span style="color: #ff79c6; font-weight: bold;">lambda</span> () (define-key Tex-mode-map <span style="color: #f1fa8c;">"\C-ch"</span> 'helm-bibtex))))
+</pre>
+</div>
+
+<p>
+I use org-ref to manage my citations in my papers.
+This is the section for the support and configuration for org-ref.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">  (<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">org-ref</span>
+    <span style="color: #ffb86c;">:custom</span>
+    (org-ref-default-bibliography <span style="color: #f1fa8c;">"~/zotero.bib"</span>))
+</pre>
+</div>
+
+<p>
+This block corrects the way that the TOC is displayed.
+It is SUPER important for the apa6 class that follows.
+APA6 has very strong opinions about how the TOC should be displayed, opinions that conflict directly with the default settings for exporting from orgmode.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">defun</span> <span style="color: #50fa7b; font-weight: bold;">org-export-latex-no-toc</span> (depth)
+    (<span style="color: #ff79c6; font-weight: bold;">when</span> depth
+      (format <span style="color: #f1fa8c;">"%% Org-mode is exporting headings to %s levels.\n"</span>
+              depth)))
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> org-export-latex-format-toc-function 'org-export-latex-no-toc)
+</pre>
+</div>
+
+<p>
+Add apa6 to the org-latex-classes export for writing academic papers in APA6 format.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">  (add-to-list 'org-latex-classes
+               '(<span style="color: #f1fa8c;">"apa6"</span>
+                 <span style="color: #f1fa8c;">"\\documentclass{apa6}"</span>
+                 (<span style="color: #f1fa8c;">"\\section{%s}"</span> . <span style="color: #f1fa8c;">"\\section*{%s}"</span>)
+                 (<span style="color: #f1fa8c;">"\\subsection{%s}"</span> . <span style="color: #f1fa8c;">"\\subsection*{%s}"</span>)
+                 (<span style="color: #f1fa8c;">"\\subsubsection{%s}"</span> . <span style="color: #f1fa8c;">"\\subsubsection*{%s}"</span>)
+                 (<span style="color: #f1fa8c;">"\\paragraph{%s}"</span> . <span style="color: #f1fa8c;">"\\paragraph*{%s}"</span>)
+                 (<span style="color: #f1fa8c;">"\\subparagraph{%s}"</span> . <span style="color: #f1fa8c;">"\\subparagraph*{%s}"</span>)))
+</pre>
+</div>
+
+<p>
+This describes the export process from orgmode to LaTeX to PDF.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">  (<span style="color: #ff79c6; font-weight: bold;">setq</span> org-latex-pdf-process
+    '(<span style="color: #f1fa8c;">"latexmk -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f"</span>))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgca4a546" class="outline-4">
+<h4 id="orgca4a546">PDF-tools</h4>
+<div class="outline-text-4" id="text-orgca4a546">
+</div>
+<div id="outline-container-orgf87bec0" class="outline-5">
+<h5 id="orgf87bec0">Linux Install</h5>
+<div class="outline-text-5" id="text-orgf87bec0">
+<p>
+The shell block below installs the libraries needed to run this on Linux.
+There is another workflow you have to use on MacOS, but I have not gotten it to work yet
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo apt install libpng-dev zlib1g-dev
+sudo apt install lib-poppler-glib-dev
+sudo apt install libpoppler-private-dev
+sudo apt install imagemagick
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org07865c0" class="outline-5">
+<h5 id="org07865c0">MacOS Install</h5>
+<div class="outline-text-5" id="text-org07865c0">
+<p>
+This assumes you have homebrew installed.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">brew install poppler automake
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge8dcbc2" class="outline-5">
+<h5 id="orge8dcbc2">PDF-tools config</h5>
+<div class="outline-text-5" id="text-orge8dcbc2">
+<p>
+PDF-tools allows me to annotate and view pdfs INSIDE emacs.
+This ties in with helm-bibtex for lit reviews.
+It's super awesome when it works, but thanks to Apple....
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">  (<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">pdf-tools</span>
+   <span style="color: #ffb86c;">:pin</span> manual <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">manually update</span>
+   <span style="color: #ffb86c;">:config</span>
+   <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">initialise</span>
+   (pdf-tools-install)
+   <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">open pdfs scaled to fit width</span>
+   (<span style="color: #ff79c6; font-weight: bold;">setq-default</span> pdf-view-display-size 'fit-width)
+   <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">use normal isearch</span>
+   (define-key pdf-view-mode-map (kbd <span style="color: #f1fa8c;">"C-s"</span>) 'isearch-forward)
+   <span style="color: #ffb86c;">:custom</span>
+   (pdf-annot-activate-created-annotations t <span style="color: #f1fa8c;">"automatically annotate highlights"</span>))
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2019-05-29</span>
+        <span title="last modification date" class="post-info">2019-06-09</span>
+        <span title="tags" class="post-info">N/A</span>
+        <span title="author" class="post-info">Jonathan Bennett</span>
+      </div>
+      <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="https://jonathanabennett.github.io/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+        <p>
+          Copyright &copy; <span id="footerYear"></span> <a href="mailto:doulos05 &lt;at&gt; gmail &lt;dot&gt; com">Jonathan Bennett</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/tumashu/org2web" target="_blank">org2web</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+</div>
+</body>
+</html>

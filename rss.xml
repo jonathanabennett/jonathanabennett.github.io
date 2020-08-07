@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Jonathan Bennett&#39;s Blog</title>
+    <link>https://jonathanabennett.github.io</link>
+    <description>Emacs, Python, and Education</description>
+    <pubDate>Fri, 21 Jun 2019 21:01:14 +07</pubDate>
+    <lastBuildDate>Fri, 21 Jun 2019 21:01:14 +07</lastBuildDate>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>org2web static site generator (https://github.com/tumashu/org2web)</generator>
+<item>
+<title>Python and Emacs Pt. 1</title>
+<link>https://jonathanabennett.github.io/blog/2019/06/20/python-and-emacs-pt.-1/</link>
+<description>No Description</description>
+<pubDate>2019-06-20</pubDate>
+<guid>https://jonathanabennett.github.io/blog/2019/06/20/python-and-emacs-pt.-1/</guid>
+</item>
+<item>
+<title>Emacs.org ~ May 2019</title>
+<link>https://jonathanabennett.github.io/blog/2019/05/28/emacs.org-~-may-2019/</link>
+<description>No Description</description>
+<pubDate>2019-06-18</pubDate>
+<guid>https://jonathanabennett.github.io/blog/2019/05/28/emacs.org-~-may-2019/</guid>
+</item>
+<item>
+<title>Org2web</title>
+<link>https://jonathanabennett.github.io/blog/2019/06/16/org2web/</link>
+<description>No Description</description>
+<pubDate>2019-06-16</pubDate>
+<guid>https://jonathanabennett.github.io/blog/2019/06/16/org2web/</guid>
+</item>
+<item>
+<title>Writing Academic Papers with Org-mode</title>
+<link>https://jonathanabennett.github.io/blog/2019/05/29/writing-academic-papers-with-org-mode/</link>
+<description>No Description</description>
+<pubDate>2019-06-09</pubDate>
+<guid>https://jonathanabennett.github.io/blog/2019/05/29/writing-academic-papers-with-org-mode/</guid>
+</item>
+<item>
+<title>Introduction to the Year of Emacs</title>
+<link>https://jonathanabennett.github.io/blog/2019/05/25/introduction-to-the-year-of-emacs/</link>
+<description>No Description</description>
+<pubDate>2019-06-09</pubDate>
+<guid>https://jonathanabennett.github.io/blog/2019/05/25/introduction-to-the-year-of-emacs/</guid>
+</item>
+<item>
+<title>File Management in Emacs with dired-mode</title>
+<link>https://jonathanabennett.github.io/blog/2019/06/05/file-management-in-emacs-with-dired-mode/</link>
+<description>No Description</description>
+<pubDate>2019-06-09</pubDate>
+<guid>https://jonathanabennett.github.io/blog/2019/06/05/file-management-in-emacs-with-dired-mode/</guid>
+</item>
+<item>
+<title>Welcome to My Blog</title>
+<link>https://jonathanabennett.github.io/blog/2019/05/25/welcome-to-my-blog/</link>
+<description>No Description</description>
+<pubDate>2019-05-25</pubDate>
+<guid>https://jonathanabennett.github.io/blog/2019/05/25/welcome-to-my-blog/</guid>
+</item>
+</channel>
+</rss>

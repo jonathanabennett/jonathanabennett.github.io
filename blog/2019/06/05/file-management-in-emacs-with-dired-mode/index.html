@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>File Management in Emacs with dired-mode - Jonathan Bennett&#39;s Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jonathan Bennett" />
+    <link rel="stylesheet" href="https://jonathanabennett.github.io/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://jonathanabennett.github.io/media/css/prettify.css" type="text/css">
+  </head>
+<body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="https://jonathanabennett.github.io/">Jonathan Bennett&#39;s Blog</a> <span class="subtitle">Emacs, Python, and Education</span></h1>
+        <ul>
+          <li><a href="https://jonathanabennett.github.io/blog/">Blog</a></li>
+          <li><a href="https://jonathanabennett.github.io/posts/">Posts</a></li>
+          <li><a href="https://jonathanabennett.github.io/tags/">Tags</a></li>
+          <li><a href="https://jonathanabennett.github.io/about/">About</a></li>
+          <li><a href="https://github.com/jonathanabennett/jonathanabennett.github.io.git">Github</a></li>
+          <li><a href="https://jonathanabennett.github.io/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="jonathanabennett.github.io">
+        </form>
+      </header>
+    </div>
+
+<div class="content-and-footer">
+<div>
+<div class="post">
+<h1 class="post-title">File Management in Emacs with dired-mode</h1>
+
+<div id="outline-container-orgd3642aa" class="outline-2">
+<h2 id="orgd3642aa">IMPORTANT NOTES</h2>
+<div class="outline-text-2" id="text-orgd3642aa">
+</div>
+<div id="outline-container-org84838a2" class="outline-3">
+<h3 id="org84838a2">Dired is Big</h3>
+<div class="outline-text-3" id="text-org84838a2">
+<p>
+<code>dired</code> has turned out to be a far, FAR bigger thing to learn than I had anticipated.
+That, coupled with the fact that my writing time vanished in the fires of the last week of school means I did not fully explore <code>dired</code> and will be returning to it later.
+Consider this merely an introduction to the very basics.
+I will be returning to this again in the future.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgca9e0f8" class="outline-3">
+<h3 id="orgca9e0f8">I use evil-collection</h3>
+<div class="outline-text-3" id="text-orgca9e0f8">
+<p>
+All the keybindings I describe below are true on my system <b>after</b> installing <code>evil-collection</code>.
+If you are running pure Emacs, these keybindings will not work.
+In fact, some of them may do surprising things (I don't know, I used <code>dired</code> like three times before I installed <code>evil-collection</code> and two of them were by accident).
+I recommend using <a href="https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf">this reference card</a> from the GNU website to find the keybindings which match with what I am describing.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgee75412" class="outline-2">
+<h2 id="orgee75412">Cost of Context Switches</h2>
+<div class="outline-text-2" id="text-orgee75412">
+<p>
+As a teacher, I deal with context switches all day, and they are easily one of the biggest drains on my productivity.
+What is a context switch?
+Put simply, a context switch is when you have to change from one task, environment, or context to another.
+</p>
+
+<p>
+Whether you're talking about software or wetware, there is a penalty to context switches.
+For a computer, this can be reduced through well-written software or by throwing more hardware at the problem.
+But for your brain, there is a fairly hard floor to how small you can make that penalty.
+</p>
+
+<p>
+I'm pretty good at context switches because I have to be.
+My classes take a blended learning approach to delivering the content, my student progress through the curriculum at different paces.
+In a typical class of 15-20 students, I might have 10 different problems that the students might be working on.
+</p>
+
+<p>
+Each of those problems is a computer program that I have to read, comprehend, and mentally check for bugs and syntax errors before I can give that student meaningful feedback on their work.
+If the student has encountered a fairly obscure bug, it can take me a bit of time to get a feel for what is happening.
+It's even worse if the student has written some tangled or misnamed code (For the love of all that is holy, kids, <b>stop</b> naming your functions <code>MyFunction</code>).
+There's no way for me to avoid the constant context switching in class (even if I tried to make them all complete the programs at the same time, they would use write pretty divergent solutions to some of them), but I do all I can to avoid it in other areas of my life.
+</p>
+
+<p>
+There are lots of techniques for doing this, but one of them is to keep a consistent interface for the tasks which you are doing.
+One of the goals of this Year of Emacs project is to complete as many of my daily tasks as possible inside Emacs to see whether or not the adoption cost of using Emacs for that task is less than the cost of context switching out of Emacs to complete it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6e84b5e" class="outline-2">
+<h2 id="org6e84b5e">End of Year Cleanup</h2>
+<div class="outline-text-2" id="text-org6e84b5e">
+<p>
+Right now, I'm in year-end cleanup mode.
+Notes from old classes need to be archived, plans for next year need to be started, and some files and folders need to be copied over.
+This is typically a lot of working with Finder.
+That involves a lot of working with the mouse.
+And mousing is one of the most expensive operations in terms of context switching for a touch typist. 
+This high cost is because you lose your place on the home row.
+While each individual interaction with the mouse may not seem like much, it can end up happening a lot, which adds up quickly over time.
+</p>
+
+<p>
+Working from the command line is possible, and I've done it before.
+But there is an interface issue there also because it isn't typically interactive.
+I want to move a few files, and then see the new directory listing right away.
+With the terminal, that's an extra command.
+</p>
+
+<p>
+Furthermore, if you're working with a particularly full directory, <code>ls</code> is not a very efficient way of viewing the file listing.
+For example, the <code>dired</code> buffer with my Google drive folder (synced specifically so I can use <code>dired</code> to manage my Google Drive Files) had 123 lines.
+Try working with that in a terminal, at best you'll be seeing half the files at a time when you start out.
+That number might go down relatively quickly, but it's still more commands that you have to type in.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4edc57b" class="outline-2">
+<h2 id="org4edc57b">Basics using evil-collection</h2>
+<div class="outline-text-2" id="text-org4edc57b">
+<p>
+One of the first challenges I had was that <code>dired</code> doesn't use Evil keybindings, even if you've installed evil-mode.
+I know a lot of people reading this will probably say I should just learn the Emacs keybindings.
+Sorry, that's not going to happen.
+Vim is instinctive for me at this point.
+When I see a text buffer, my first instinct is to <code>j</code> or <code>k</code> my way through the lines.
+It's so ingrained, I do it in text buffers where I have never had Vim keys.
+More than once, I have been typing while talking to a student and looked at my screen to see that the last line of my Google Doc had something like <code>5bctnJavaScript$</code> at the end.
+</p>
+
+<p>
+This will be even more true in Emacs, where every other buffer I interact with right now (except Magit buffers) use Vim keys.
+So I need <code>dired</code> buffers to have Vim keys if I'm going to use them: enter <code>evil-collection</code>.
+</p>
+
+<p>
+Evil-collection is a collection of keybindings for major modes that mimic (to a degree) Vim keybindings.
+While I could definitely roll my own keybindings using the <code>:bind</code> feature in <code>use-package</code>, it is actually pretty difficult to create consistent, memorable, and ergonomic keybindings.
+I like that there are already bindings I can use, which means I don't have to try to make up my own.
+Having said that, I one of the larger projects I plan on tackling over the summer is using <code>hydra</code> to replace <code>evil-leader</code> and use that to replace some of the multi-key chords needed in things like org-mode (<code>C-c C-v t</code>, I'm looking at you).
+</p>
+
+<p>
+Here is the setup for <code>evil-collection</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">evil-collection</span>
+  <span style="color: #ffb86c;">:after</span> (evil)
+  <span style="color: #ffb86c;">:config</span>
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> evil-collection-mode-list '(dired))
+  (evil-collection-init))
+</pre>
+</div>
+<p>
+A couple of things to note here for people new to <code>use-package</code>.
+</p>
+
+<ol class="org-ol">
+<li>Notice the use of <code>:after (evil)</code>.
+This script will not load <code>evil-collection</code> until <code>evil</code> has been loaded.
+Because that is a list, you can add additional modes to it.
+For example, if I was using the bindings for <code>elpy</code>, I might make that <code>:after (evil elpy)</code> to ensure that the <code>elpy</code> package was available before the bindings for it were created.</li>
+<li><code>:config</code> is code that is run after the package is loaded. <code>:init</code> is code that is run before the package is loaded.
+I initially tried to use <code>:custom</code> here, but it didn't initialize the value correctly.
+I'm not sure why that was, as I was given to understand that <code>:custom</code> was designed to set variables needed by the package.</li>
+</ol>
+
+<p>
+<code>evil-collection-mode-list</code> is a list containing the modes in which you want the evil-collection bindings.
+It defaults to all of the modes.
+Because I want to explicitly explore the bindings rather than just using them blindly, I am setting this variable explicitly and adding modes as I need them.
+It's possible that I won't like the bindings for some modes.
+I might also choose to roll hydras for some of them rather than using the <code>evil-collection</code> bindings.
+In all cases, I want to have control over what is set and what is not set in my Emacs setup.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf2be077" class="outline-2">
+<h2 id="orgf2be077">Using dired</h2>
+<div class="outline-text-2" id="text-orgf2be077">
+</div>
+<div id="outline-container-orgc07a977" class="outline-3">
+<h3 id="orgc07a977">Configuration</h3>
+<div class="outline-text-3" id="text-orgc07a977">
+<p>
+While most new Emacsers assume that <code>use-package</code> is meant to install packages, it's actually meant to manage packages.
+What's the difference, you say?
+Well, <code>dired</code> is already installed in your Emacs, but you can still use <code>use-package</code> to set up <code>dired</code>.
+</p>
+
+<p>
+Here is the setup I'm currently using.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #8be9fd;">dired</span>
+<span style="color: #ffb86c;">:ensure</span> nil
+<span style="color: #ffb86c;">:config</span>
+(<span style="color: #ff79c6; font-weight: bold;">when</span> (string= system-type <span style="color: #f1fa8c;">"darwin"</span>)
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> dired-use-ls-dired t
+        insert-directory-program <span style="color: #f1fa8c;">"/usr/local/bin/gls"</span>))
+<span style="color: #ffb86c;">:custom</span>
+(dired-listing-switches <span style="color: #f1fa8c;">"-aBhl --group-directories-first"</span>))
+</pre>
+</div>
+
+<p>
+One important note here is the <code>:ensure nil</code> at the top.
+I have <code>use-package-always-ensure</code> set to <code>t</code> at the beginning of my Emacs.org.
+This means every package has <code>:ensure t</code> by default.
+</p>
+
+<p>
+Ensure means (roughly) "This must be downloaded, find it from one of the package repositories."
+But <code>dired</code> isn't on the package repositories, it's built-in.
+So we need to set <code>ensure</code> to <code>nil</code> for this package.
+</p>
+
+<p>
+Finally, we use the <code>dired-listing-switches</code> to pass a different set of switches to <code>ls</code> than the defaults.
+You can set this to whatever you like, the ones I've included here will do the following: List all entries, directories first, except backup files (those ending in <code>~</code>), using the long listing format and human readable sizes.
+Play around on the command line until you get something you like, and then set your <code>dired-listing-switches</code> to that.
+</p>
+</div>
+
+<div id="outline-container-orge1a2fdd" class="outline-4">
+<h4 id="orge1a2fdd">Mac OS Users</h4>
+<div class="outline-text-4" id="text-orge1a2fdd">
+<p>
+As noted above, <code>dired</code> uses the <code>ls</code> command if possible to generate the directory listing.
+But Apple is using a non-GNU set of <code>core-utils</code>.
+That means that the listing switches for <code>dired</code> won't work correctly without telling it where to find a GNU version of the <code>core-utils</code>.
+</p>
+
+<p>
+To begin, run <code>brew install core-utils</code> (Or the equivalent command on your package manager of choice).
+Now, you need to tell Emacs where to find those <code>core-utils</code>, but only when running Mac OS.
+That's what the <code>when</code> command in the listing above does.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgad5e435" class="outline-3">
+<h3 id="orgad5e435">Entering dired-mode</h3>
+<div class="outline-text-3" id="text-orgad5e435">
+<p>
+The way I usually get into <code>dired-mode</code> is through the find-file command.
+As noted in my <a href="https://jonathanabennett.github.io/blog/2019/05/28/emacs.org-~-may-2019/">Emacs.org</a> file, that is bound to <code>&lt;SPC&gt; e</code> on my system.
+Once there, if you select the top-most entry (<code>/path/to/current/directory/.</code>), you will open that directory in <code>dired-mode</code>.
+</p>
+
+<p>
+You can also open <code>dired-mode</code> directly using <code>C-x d</code> and then supplying a directory path (using helm).
+</p>
+</div>
+</div>
+<div id="outline-container-orgf7a255a" class="outline-3">
+<h3 id="orgf7a255a">Using dired-mode</h3>
+<div class="outline-text-3" id="text-orgf7a255a">
+<p>
+Once in <code>dired-mode</code>, I can use the <code>j</code> and <code>k</code> keys to navigate up and down.
+While there are searching functions, I did not need them for what I was working on because I need to inspect pretty much every file as part of my end of year cleanup.
+</p>
+
+<p>
+Once your cursor is on the line for a given file, you can press <code>&lt;RET&gt;</code> to open that buffer in the dired window.
+Because I'm working with the directory, I generally want to open it in the other window so I can keep my dired buffer open.
+For that, simply press <code>S-&lt;RET&gt;</code>.
+</p>
+
+<p>
+But the real power of <code>dired-mode</code> is not in opening files, it is in changing the directory structure.
+To do this, you first mark the files or directories you wish to operate on.
+If you want to delete the files, you can simply mark them with <code>d</code>, which will mark them for deletion.
+After you have flagged them for deletion, pressing <code>x</code> will delete them.
+</p>
+
+<p>
+Alternatively, pressing <code>m</code> while in dired mode will mark the file or directory for any action.
+This is what I usually do.
+After you have marked the files you wish to act on, pressing <code>D</code> or will delete them.
+Or, you can use <code>R</code> to rename them (this runs the <code>mv</code> command, so it can also be used to move them to another directory).
+I think the benefits of <code>m</code> over <code>d</code> are twofold.
+</p>
+
+<p>
+First, you only have to remember a single, mnemonic command.
+Sure <code>d</code> makes sense for delete, but it doesn't actually delete the files.
+It only marks them for deletion.
+<code>m</code> for mark is a better mnemonic than <code>d</code> for mark for deletion.
+</p>
+
+<p>
+Secondly, I like that the commands to operate on marked files are all uppercase.
+This is a solid reminder that you're about to do something.
+It separates and distinguishes potentially destructive actions from generally harmless ones.
+</p>
+
+<p>
+You can use <code>^</code> to move up a directory, and <code>&lt;RET&gt;</code> on a sub-directory will open that directory in its own dired buffer.
+You can also create new directories with <code>+</code>.
+</p>
+
+<p>
+Once you are finished, you can then simply close the dired buffer with <code>q</code>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6e53e7f" class="outline-2">
+<h2 id="org6e53e7f">Final Thoughts</h2>
+<div class="outline-text-2" id="text-org6e53e7f">
+<p>
+Dired really surprised me with how useful it is.
+I was certain that it would be useful, but it surprised me how quickly it surpassed the tools I had been using previously.
+In previous years, this process has taken me a week of 2-3 sessions a day, 1-2 hours per session.
+Much of that was the delay inherent in using a website (Google Drive, in this case), a lot of it is having to use the mouse, but whatever the reason, it was time consuming at a time of the year when I don't really have a lot of extra time.
+</p>
+
+<p>
+This time, I was able to complete this over the course of about 5 hours.
+That includes the time I spent configuring and learning <code>dired</code>.
+My experience has typically been that any tool this useful (4x faster, give or take) takes a similarly long time to learn.
+</p>
+
+<p>
+I will be the first to say that I have not learned everything there is to do with directories in Emacs.
+I have not touched <code>dired-x</code>, <code>wdired</code>, <code>dired-aux</code>, or any of the 3rd party packages that supplement <code>dired</code>.
+I have barely touched searching in a directory.
+I have only used 3 of the actions available (create directory, delete, rename).
+I have only used 1 of the means of marking.
+</p>
+</div>
+
+<div id="outline-container-orga02e987" class="outline-3">
+<h3 id="orga02e987">Future Expansions</h3>
+<div class="outline-text-3" id="text-orga02e987">
+<p>
+There is now a way to get Google Drive directly in Emacs via <code>GVFS</code>.
+I haven't played with it because, well, I'm tired of fighting with my Mac right now and installing <code>GVFS</code> purports to be easy, but my experience has been that this is rarely as true as is implied.
+This would allow me to work with the Google Drive file structure via Emacs (with Tramp).
+This will worth together with <a href="https://github.com/ubolonton/pullover">pullover</a>, which has the tagline "Texting while driving (other apps) is dangerous. Let's pull over there to edit the text in Emacs instead!"
+</p>
+
+<p>
+That sounds amazing.
+If it actually works, I hold to combine that with emacsclient and org-protocol to move even more things into Emacs.
+If anybody has worked on this and gotten it working, please let me know!
+</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2019-06-05</span>
+        <span title="last modification date" class="post-info">2019-06-09</span>
+        <span title="tags" class="post-info">N/A</span>
+        <span title="author" class="post-info">Jonathan Bennett</span>
+      </div>
+      <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="https://jonathanabennett.github.io/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x(<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+        <p>
+          Copyright &copy; <span id="footerYear"></span> <a href="mailto:doulos05 &lt;at&gt; gmail &lt;dot&gt; com">Jonathan Bennett</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/tumashu/org2web" target="_blank">org2web</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+</div>
+</body>
+</html>
