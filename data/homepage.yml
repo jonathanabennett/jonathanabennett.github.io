@@ -1,0 +1,164 @@
+# page title
+head:
+  title: "Jonathan Bennett Portfolio site"
+  description: "A rebuild of my original portfolio to use more modern tooling."
+# showcase
+showcase:
+  enable: true
+  title: "Hello, I’m Jonathan Bennett."
+  subtitle: "AP Computer Science Teacher & Robotics Teacher"
+  description: >
+    I am an international educator with 14 years of experience in education and more than 25 years of experience 
+    programming. I am the K-12 STEAM Coordinator at <a target='_blank' href="https://sjajeju.kr">St. Johnsbury Academy Jeju</a>. 
+    I am interested in a role which will allow me to build or work with a high level robotics competition program and 
+    have a larger impact on the role of technology in a school.<br>
+    This website has been built using <a target='_blank' href="https://gohugo.io">hugo</a>, 
+    <a target='_blank' href="https://www.markdownguide.org">markdown</a>, and the 
+    <a target='_blank' href="https://github.com/zetxek/adritian-free-hugo-theme">Adritian Free Hugo Theme</a>. 
+    It is hosted on <a target='_blank' href="https://github.com", the code can be found 
+    <a target='_blank' href="https://github.com/jonathanabennett/jonathanabennett.github.io">here</a>.
+    This is a modern toolset which demonstrates my ability to use and integrate modern tools which students will need 
+    to use and understand once they move on to their professional careers.
+  image:
+    x: "images/showcase/showcase.png"
+    _2x: "images/showcase/showcase@2x.png"
+  imageMobile:
+    x: "images/showcase/showcase-mobile.jpg"
+
+  button:
+    icon: "icon-mail-fill"
+    btnText: "Contact"
+    URL: "mailto:doulos05@gmail.com"
+
+  socialLinks:
+    - icon: "github"
+      URL: "https://github.com/jonathanabennett"
+
+    - icon: "twitter"
+      URL: "https://twitter.com/PlanEffective"
+
+    - icon: "youtube"
+      URL: "https://www.youtube.com/@JonathanBennettKorea"
+
+    - icon: "facebook"
+      URL: "https://www.facebook.com/zetxek/"
+
+# about
+about:
+  enable: true
+  title: "Who am I?"
+  content: >
+    <p class="lead">
+      As an educator, I believe that every student has the ability to succeed when given the tools and equipment to do
+      so. I structure my classes to maximize student flexibility on summative assessments, delivering nearly all of my
+      assessments in non-AP courses through projects with extensive student agency and reflection at every step of the
+      process. In AP Courses, my students consistently demonstrate mastery of the subject. Overall, 95% of my students
+      pass the AP exams and 75% receive a 4 or a 5.
+    </p>
+    <p class="lead">
+      My experience as a programmer also allows me to contribute to schools outside of the classroom. In the previous
+      three schools I have worked at, I have built software solutions for that school. In two of those cases, those 
+      tools are still in use today. My area knowledge as a teacher allows me to build software that is helpful and
+      useful for schools.
+    </p>
+  button:
+    icon: "icon-smile-fill"
+    btnText: "About Me"
+    URL: "https://www.linkedin.com/in/adrianmoreno/"
+  image:
+    x: "images/who-am-i/user-picture.png"
+    _2x: "images/who-am-i/user-picture@2x.png"
+
+# education
+education:
+  enable: true
+  title: "Education"
+  items:
+    - university: "Toccoa Falls College"
+      year: "2002-2006"
+      degree: "Bachelor of Science (BS), Cross Cultural Studies"
+
+    - university: "Moreland University"
+      year: "2017-2020"
+      degree: "Masters of Education (M.Ed.), Educational Research"
+
+# experience
+experience:
+  enable: true
+  title: "Experience"
+  description: >
+    This is where you can highlight a bit over your experience. Years of total experience, specialization, etc.
+  button:
+    icon: "icon-linkedin-fill"
+    btnText: "Linkedin"
+    URL: "https://www.linkedin.com/in/adrianmoreno/"
+  button2:
+    icon: "icon-profile-fill"
+    btnText: "Download My Resume"
+    URL: "#"
+  button3:
+    icon: "icon-arrow-right"
+    btnText: "View All"
+    URL: "/experience"
+
+# Client & Work
+client_and_work:
+  title: "Clients & Works"
+  enable: false
+
+# testimonial
+testimonial:
+  enable: false
+  title: "Testimonials"
+  items:
+    - name: "Daniel Jordan"
+      position: "Phonet, CEO"
+      content: "Cold calling can be a great way to generate quality leads. You get to speak to the gatekeepers and stakeholders, and you get a great insight into their requirements and influences. But cold calling is an art-form. It can be daunting, it’s always a lot of work, and you always need to make a good impression."
+      image:
+        x: "images/testimonials/daniel-jordan.jpg"
+        _2x: "images/testimonials/daniel-jordan@2x.jpg"
+
+    - name: "Jonathan Peters"
+      position: "Textic, CEO"
+      content: "Whether you or your loved one is encountering the natural decrease in mobility that occurs with the passing of time, or deals with an illness-related lack of physical agility, a stair lift can be the ideal way to put you in charge of your home again. Regardless of the shape or make of your living accommodation."
+      image:
+        x: "images/testimonials/jonathan-peters.jpg"
+        _2x: "images/testimonials/jonathan-peters@2x.jpg"
+
+    - name: "Antonio Willis"
+      position: "Cyberse, CEO"
+      content: "In this digital generation where information can be easily obtained within seconds, business cards still have retained their importance in the achievement of increased business exposure and business sales. If your business already has a bunch of printed cards distributed to a number of potential customers and yet."
+      image:
+        x: "images/testimonials/antonio-willis.jpg"
+        _2x: "images/testimonials/antonio-willis@2x.jpg"
+
+# contact
+contact:
+  enable: true
+  title: "Contact"
+  form:
+    action: "#"
+    full_name: "Full Name"
+    email: "Email Address"
+    message: "Type Your Message Here"
+  phone:
+    title: "Phone Number"
+    number: "+82 10 3653-9350"
+  email:
+    title: "Email"
+    email: '<a href="mailto:doulos05@gmail.com">doulos05@gmail.com</a>'
+  address:
+    title: "Address"
+    address: "Jeju, South Korea"
+  button:
+    icon: "icon-mail-fill"
+    btnText: "Send Message"
+
+# newsletter
+newsletter:
+  enable: false
+  title: "Newsletter subscription"
+  success_message: "Successfully subscribed"
+  error_message: "Error while subscribing."
+  note: "We'll never share your email with anyone else."
+
