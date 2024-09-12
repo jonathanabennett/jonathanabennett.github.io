@@ -16,9 +16,11 @@ duration: "2021-present" # from-to, for example "2022-2024". Fill-in.
 # STEAM Department Growth
 I was hired at this position to expand their existing Computer Science program. Over the course of my first year, the
 student enrollment in STEAM courses more than doubled, requiring us to expand the department from 1.5 full time
-equivalent positions 3 full time teachers, where it remains.
+equivalent positions 3 full time teachers, where it remains. This year, our combined enrollment in STEAM classes at the
+HS level is 216, including 45 students in AP courses.
 
-This led directly to the creation of a K-12 STEAM Coordinator role at the school, which I have filled since its
+# K-12 STEAM & Robotics Coordinator
+This growth led directly to the creation of a K-12 STEAM Coordinator role at the school, which I have filled since its
 creation. In this role, I have led our school's efforts to vertically align our STEAM curriculum as we prepare for our
 NEASC accreditation. In addition, I have been involved in refreshing our 3D printer and laser cutter fleets. This has
 involved looking closely at local providers and equipment to ensure that teachers have equipment which does not need
@@ -39,15 +41,23 @@ are all members of CSHS.
 
 # Robotics
 In addition to Computer Science, I have also played a key role in the expansion of their robotics competition program.
-I am the founding head coach for our High School teams and we successfully hosted three tournaments our first year,
-requiring extensive planning and logistical coordination with our athletics, facilities, and student volunter teams.
+I am the founding head coach for our High School teams. We successfully hosted three tournaments our first year,
+requiring extensive planning and logistical coordination with our athletics, facilities, and student volunteer teams.
 
 Our first year as a team, students from our program won the Korean National Tournament, earning themselves a space at 
 the 2024 Vex World Championships in Dallas, TX. As part of my role, I chaperoned our school's first trip to the US,
 bringing 6 students to Dallas for a week.
 
 In our second year, we will be hosting 4 tournaments again, as well a running a League between 4 other schools in our
-athletics league. I have expanded the program greatly through capital investments and also through training coaches to
-provide high quality coaching and mentoring for our teams. I am also a certified Event Partner, meaning I an certified
+athletics league. We have expanded the program greatly through capital investments and also through training coaches to
+provide high quality coaching and mentoring for our teams. I am also a certified Event Partner, meaning I am certified
 to host Vex Tournaments at any level. I have developed a plan for our school to apply to host a Signature Event 
 (a prestigious tournament category within Vex which requires extensive planning and coordination).
+
+# AI Committee
+With the rise of generative AIs, I became intimately involved in the role of AI at our school. I was one of the first
+teachers to require students to use AI in their projects and I did a detailed analysis of the efficacy of AI Detection
+Tools, which became the foundation of our school's policy regarding academic dishonesty and AI tools. In 2024, I was a
+member of our AI Committee and drafted large parts of the document which became our initial policy. I was part of the
+decision to adopt MagicSchool school-wide as our preferred AI platform. Since that adoption, I have been one of the key
+trainers for that tool in our school.
