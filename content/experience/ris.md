@@ -16,12 +16,13 @@ duration: "2018-2021" # from-to, for example "2022-2024". Fill-in.
 # Program Creation
 I was hired at this position to launch a Computer Science program in the Middle School. When initially hired, they had
 been teaching Computer Science in their high school for several years. There was high demand for the program and over
-the course of my stay, there was consistently high demand. On average, 1/3 of the students in the Middle School were
+the course of my stay, there was consistently high demand. On average, one-third of the students in the Middle School were
 enrolled in one of my classes.
 
 The first year I was there, I launched our Computer Science classes. This involved extensive research in different
-curriculum platforms for Computer Science classes. After selected CodeHS as our platform, I wrote a proposal to purchase
-the Pro version of the platform. We also began our curriculum review for Computer Science in the Spring of that year.
+curriculum platforms for Computer Science classes. After I selected CodeHS as our platform, I wrote a proposal to 
+purchase the Pro version of the platform. We also began our curriculum review for Computer Science in the spring of 
+that year.
 
 In developing the curriculum, I focused on two key concepts: Top-Down Design and Debugging
 
@@ -32,29 +33,31 @@ concept of “divide and conquer” applied to computer programming.
 
 Breaking problems into smaller sub-problems is an essential skill if you wish to create programs on your own. If you 
 cannot do that, it becomes incredibly difficult to figure out where you should start working on the problem. My 
-curriculum at RIS spent considerable time exercising the skill of identifying the large problem, it’s sub-problems, and 
+curriculum at RIS spent considerable time exercising the skill of identifying the large problem, its sub-problems, and 
 their sub-problems. I also taught the students to think about how best to define the boundaries of a given problem. 
 These exercises equipped my students with the skills needed to design a computer program.
 
 ## Debugging
 Debugging is the process of removing defects from software. It is an incredibly challenging task, and according to a 
-variety of studies conducted of professional programmers over the last 40 years, programmers spend 30 to 60% of their 
-time debugging. It is also an incredibly frustrating process for beginners for a wide variety of reasons, some of which 
-are explored in my master’s thesis.
+variety of studies conducted of professional programmers over the last forty years, programmers spend 30 to 60% of 
+their time debugging. It is also an incredibly frustrating process for beginners for a wide variety of reasons, some of 
+which are explored in my master’s thesis.
 
 I taught debugging through three major streams of delivery. First, we did regular “speed debugging” activities to start 
 the class in which the students were exposed to the most common typos found in student code and asked to spot them. 
 For these, I used Quizizz to deliver the activity and I tracked the class wide average as a challenge to improve their
 class’s results over time. Second, I engaged in group debugging of the teacher’s code. This was done to normalize the
-idea that making mistakes is part of computer programming, and so it is OK if your code has mistakes in it. These 
-debugging sessions focused on bugs where the code appears to work but is incorrect. Most commonly, these kinds of bugs
-center around failures to define the boundaries of a given problem or sub-problem. Finally, students were asked to 
-debug code they have not written. This is a common activity for professional programmers, but it also is important 
-because it teaches students how to read code and understand what it does before they start changing it.
+idea that making mistakes is part of computer programming, and so it is OK if your code has mistakes in it. This 
+helps kids develop a growth mindset that builds confidence in students as they struggle with setbacks and failures
+across all subjects. These debugging sessions focused on bugs where the code appears to work but is incorrect. Most 
+commonly, these kinds of bugs center around failures to define the boundaries of a given problem or sub-problem. 
+Finally, students were asked to debug code they have not written. This is a common activity for professional 
+programmers, but it also is important because it teaches students how to read code and understand what it does before 
+they start changing it.
 
 # Robotics
 The second year, I added Robotics courses, which adopted the NGSS Engineering standards for Middle School. This class 
-was structured around the creation and maintenance of an Engineering Notebook, which documented the development and 
+was structured around the creation and maintenance of an engineering notebook, which documented the development and 
 design of their robots over the course of the semester.
 
 I selected the engineering notebook as the primary means of assessment because constructing a robot is not the primary 
@@ -95,12 +98,12 @@ specific concept in one of their classes or if they need to work on their learni
 opportunity. This fluidity does not work well with PowerSchool, where we track attendance.
 
 In order to provide consistent tracking while we pursued a permanent system, I created a temporary solution for the 
-school. Over the course of the weekend before we started allowing students to move from their primary mentor’s room, I 
-built a webpage using Python 3 and Django, hosted for free on PythonAnywhere, which provided a way for teachers to 
-check attendance for their students as well as a way for them to move students to a new room and have the teacher in 
-that room see the student had been moved after a refresh. Finally, an attendance reporting dashboard was built with 
-limited access which allowed the principals to see a list of all students who were marked absent in real time as well 
-as to see the total number of tardies and absences over the course of a semester.
+school over the course of the weekend before the program launched. I built a webpage using Python 3 and Django, hosted 
+for free on PythonAnywhere, which provided a way for teachers to check attendance for their students. It also gave them 
+a way to move students to a new room and have the teacher in that room see the student had been moved. Finally, an 
+attendance reporting dashboard was built with limited access which allowed the principals to see a list of all students 
+who were marked absent in real time as well as to see the total number of tardies and absences over the course of a 
+semester.
 
 The solution was well received by students and teachers alike, who found it easy to navigate and use. Additionally, the 
 team running our Focus Block was able to quickly and easily manage the location of students and teachers and keep track 
