@@ -139,7 +139,7 @@ testimonial:
 
 # contact
 contact:
-  enable: true
+  enable: false
   title: "Contact"
   form:
     action: "#"
