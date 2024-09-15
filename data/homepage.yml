@@ -80,8 +80,12 @@ education:
       degree: "Bachelor of Science (BS), Cross Cultural Studies"
 
     - university: "Moreland University"
-      year: "2017-2020"
+      year: "2017-2019"
       degree: "Masters of Education (M.Ed.), Educational Research"
+
+    - university: "College of St. Scholastica"
+      year: "2022-2023"
+      degree: "Graduate Certificate, Computer Science Education"
 
 # experience
 experience:
