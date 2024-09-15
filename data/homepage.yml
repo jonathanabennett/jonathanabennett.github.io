@@ -104,8 +104,8 @@ experience:
 
 # Client & Work
 client_and_work:
-  title: "Clients & Works"
-  enable: false
+  title: "Areas of Expertise"
+  enable: true
 
 # testimonial
 testimonial:
