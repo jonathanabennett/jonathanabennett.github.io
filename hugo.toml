@@ -35,20 +35,20 @@ name = "Portfolio"
 url = "#portfolio"
 weight = 3
 
-#  [[menu.header]]
-#  name = "Experience"
-#  URL = "#experience"
-#  weight = 4
+[[menu.header]]
+name = "Experience"
+URL = "#experience"
+weight = 4
 
 [[menu.header]]
 name = "Blog"
 url = "/blog"
 weight = 5
 
-[[menu.header]]
-name = "Contact"
-url = "#contact"
-weight = 6
+# [[menu.header]]
+# name = "Contact"
+# url = "#contact"
+# weight = 6
 
 [[menu.footer]]
 name = "About"
@@ -60,10 +60,10 @@ name = "Portfolio"
 url = "#portfolio"
 weight = 3
 
-[[menu.footer]]
-name = "Contact"
-url = "#contact"
-weight = 4
+# [[menu.footer]]
+# name = "Contact"
+# url = "#contact"
+# weight = 4
 
 
 [params]
@@ -75,7 +75,7 @@ sections = [
   "experience",
   "client-and-work",
   "testimonial",
-  "contact",
+  # "contact",
   "newsletter",
 ]
 
