@@ -75,32 +75,34 @@ education:
   enable: true
   title: "Education"
   items:
-    - university: "Toccoa Falls College"
-      year: "2002-2006"
-      degree: "Bachelor of Science (BS), Cross Cultural Studies"
+    - university: "College of St. Scholastica"
+      year: "2022-2023"
+      degree: "Graduate Certificate, Computer Science Education"
 
     - university: "Moreland University"
       year: "2017-2019"
       degree: "Masters of Education (M.Ed.), Educational Research"
 
-    - university: "College of St. Scholastica"
-      year: "2022-2023"
-      degree: "Graduate Certificate, Computer Science Education"
+    - university: "Toccoa Falls College"
+      year: "2002-2006"
+      degree: "Bachelor of Science (BS), Cross Cultural Studies"
+
 
 # experience
 experience:
   enable: true
   title: "Experience"
   description: >
-    14 Years of educational experience and more than 25 years of programming experience.
+    I have 14 Years of educational experience and more than 25 years of programming experience. My experience in
+    international education covers K-12 and include AP Experience as well. 
   button:
     icon: ""
     btnText: "Blog"
     URL: "https://effectiveeducator.substack.com"
   button2:
     icon: "icon-profile-fill"
-    btnText: "Download My Resume"
-    URL: "#"
+    btnText: "Resume (PDF)"
+    URL: "/resume.pdf"
   button3:
     icon: "icon-arrow-right"
     btnText: "View All"
