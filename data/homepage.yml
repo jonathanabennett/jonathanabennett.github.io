@@ -53,14 +53,14 @@ about:
       As an educator, I believe that every student has the ability to succeed when given the tools and equipment to do
       so. I structure my classes to maximize student flexibility on summative assessments, delivering nearly all of my
       assessments in non-AP courses through projects with extensive student agency and reflection at every step of the
-      process. In AP Courses, my students consistently demonstrate mastery of the subject. Overall, 95% of my students
-      pass the AP exams and 75% receive a 4 or a 5.
+      process. In AP Courses, my students consistently demonstrate <a href='/blog/ap-instruction/'>mastery</a> of the 
+      subject. Overall, 95% of my students pass the AP exams and 75% receive a 4 or a 5 (84% of my AP CSA students).
     </p>
     <p class="lead">
       My experience as a programmer also allows me to contribute to schools outside of the classroom. In the previous
-      three schools I have worked at, I have built software solutions for that school. In two of those cases, those 
-      tools are still in use today. My area knowledge as a teacher allows me to build software that is helpful and
-      useful for schools.
+      three schools I have worked at, I have built <a href='/blog/point-trackers/'>software solutions</a> for that 
+      school. In two of those cases, those tools are still in use today. My area knowledge as a teacher allows me to 
+      build software that is helpful and useful for schools.
     </p>
   button:
     icon: "icon-smile-fill"
