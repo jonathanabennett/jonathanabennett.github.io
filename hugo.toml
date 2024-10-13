@@ -37,7 +37,7 @@ weight = 3
 
 [[menu.header]]
 name = "Experience"
-URL = "#experience"
+url = "#experience"
 weight = 4
 
 [[menu.header]]
@@ -45,10 +45,10 @@ name = "Blog"
 url = "/blog"
 weight = 5
 
-# [[menu.header]]
-# name = "Contact"
-# url = "#contact"
-# weight = 6
+[[menu.header]]
+name = "Contact"
+url = "#contact"
+weight = 6
 
 [[menu.footer]]
 name = "About"
@@ -60,10 +60,10 @@ name = "Portfolio"
 url = "#portfolio"
 weight = 3
 
-# [[menu.footer]]
-# name = "Contact"
-# url = "#contact"
-# weight = 4
+[[menu.footer]]
+name = "Contact"
+url = "#contact"
+weight = 4
 
 
 [params]
@@ -75,7 +75,7 @@ sections = [
   "experience",
   "client-and-work",
   "testimonial",
-  # "contact",
+  "contact",
   "newsletter",
 ]
 
@@ -86,7 +86,7 @@ text1 = "Jonathan"
 text2 = "Bennett"
 
 [params.footer]
-copyright = "© Adritian. Free Hugo theme by Adrián Moreno Peña."
+copyright = "© Jonathan Bennett. Uses the free Hugo theme by Adrián Moreno Peña."
 [params.footer.radity_logo]
 x = "img/general/design-and-code-radity.png"
 _2x = "img/general/design-and-code-radity@2x.png"

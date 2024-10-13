@@ -25,12 +25,10 @@ showcase:
     _2x: "images/showcase/showcase@2x.png"
   imageMobile:
     x: "images/showcase/showcase-mobile.jpg"
-
   button:
     icon: "icon-mail-fill"
     btnText: "Contact"
     URL: "mailto:doulos05@gmail.com"
-
   socialLinks:
     - icon: "github"
       URL: "https://github.com/jonathanabennett"
@@ -57,10 +55,10 @@ about:
       subject. Overall, 95% of my students pass the AP exams and 75% receive a 4 or a 5 (84% of my AP CSA students).
     </p>
     <p class="lead">
-      My experience as a programmer also allows me to contribute to schools outside of the classroom. In the previous
-      three schools I have worked at, I have built <a href='/blog/point-trackers/'>software solutions</a> for that 
-      school. In two of those cases, those tools are still in use today. My area knowledge as a teacher allows me to 
-      build software that is helpful and useful for schools.
+      My experience as a programmer also allows me to contribute to schools outside of the classroom. In the three most
+      recent schools I have worked at, I have built <a href='/blog/point-trackers/'>software solutions</a> for them. 
+      In two of those cases, those tools are still in use today. My area knowledge as a teacher allows me to build 
+      software that is helpful and useful for schools.
     </p>
   button:
     icon: "icon-smile-fill"
@@ -141,10 +139,11 @@ testimonial:
 
 # contact
 contact:
-  enable: false
+  enable: true
   title: "Contact"
   form:
-    action: "#"
+    action: "https://formsubmit.co/doulos05@gmail.com"
+    method: "POST"
     full_name: "Full Name"
     email: "Email Address"
     message: "Type Your Message Here"
