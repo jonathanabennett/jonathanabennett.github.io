@@ -142,7 +142,7 @@ contact:
   enable: true
   title: "Contact"
   form:
-    action: "https://formsubmit.co/doulos05@gmail.com"
+    action: "https://formsubmit.co/521c3f96c6cf2505dc7df8fbe995435c"
     method: "POST"
     full_name: "Full Name"
     email: "Email Address"
