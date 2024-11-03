@@ -13,9 +13,9 @@ duration: "2017-2018" # from-to, for example "2022-2024". Fill-in.
 # The beginning of a great career. 
 # 
 ---
-# Revising Curriculum
-
 # Rock Band Sponsorship
+While at SSI, I was co-sponsor for their Student Rock Band. As part of this, I helped with the planning and execution
+of their concerts. 
 
 # Scholar Dollars
 
