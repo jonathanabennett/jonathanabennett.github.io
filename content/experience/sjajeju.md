@@ -1,5 +1,5 @@
 ---
-date: '2025-09-11T10:46:17+09:00' # date in which the content is created - defaults to "today"
+date: '2024-09-11T10:46:17+09:00' # date in which the content is created - defaults to "today"
 title: 'St. Johnsbury Academy Jeju'
 draft: false # set to "true" if you want to hide the content 
 jobTitle: "K-12 STEAM & Robotics Coordinator and AP Computer Science Teacher" # job description/title. Fill-in
