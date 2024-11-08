@@ -1,5 +1,5 @@
 ---
-date: '2024-09-09T11:14:36+09:00' # date in which the content is created - defaults to "today"
+date: '2021-09-09T11:14:36+09:00' # date in which the content is created - defaults to "today"
 title: 'Ruamrudee International School'
 draft: false # set to "true" if you want to hide the content 
 jobTitle: "MS Computer Science & Robotics Teacher" # job description/title. Fill-in
