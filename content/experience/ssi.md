@@ -1,5 +1,5 @@
 ---
-date: '2016-10-18T13:38:00+09:00' # date in which the content is created - defaults to "today"
+date: '2018-10-18T13:38:00+09:00' # date in which the content is created - defaults to "today"
 title: 'Seoul Scholars International'
 draft: false # set to "true" if you want to hide the content 
 jobTitle: "AP World History & Geography Teacher" # job description/title. Fill-in
