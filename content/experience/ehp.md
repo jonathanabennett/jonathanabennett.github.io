@@ -31,5 +31,7 @@ responsible for imaging them, setting them up, training teachers on their use, a
 students had issues.
 
 # Teacher Training
-I led multiple teacher trainings on Google tools ranging from Chromebooks to Gmail to Google Docs, including workshops to help teachers prepare for their Google Certified Educator level 2 certifications. During this
-time, two of my presentations to staff were turned into presentations at the Google AppSummit conference.
+I led multiple teacher trainings on Google tools ranging from Chromebooks to Gmail to Google Docs, including workshops 
+to help teachers prepare for their Google Certified Educator level 2 certifications. During this
+time, two of my presentations to staff were turned into presentations at the Google AppSummit conferences held in Korea
+for 2016 and 2017.
