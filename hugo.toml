@@ -138,14 +138,9 @@ name = 'About'
 URL = '#about'
 weight = 2
 [[languages.en.menus.header]]
-name = 'Portfolio'
-URL = '#portfolio'
+name = 'Experience'
+URL = '#experience-single'
 weight = 3
-#  [[languages.en.menus.header]]
-#  name = "Experience"
-#  URL = "#experience"
-#  weight = 4
-
 [[languages.en.menus.header]]
 name = "How to"
 URL = "/blog"
