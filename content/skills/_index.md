@@ -46,4 +46,4 @@ skill_categories:
         description: "ES, MS, and HS Tournaments, HS National Championship, HS League"
 ---
 
-As a technology professional, I've developed expertise across multiple technical domains throughout my career. This skills showcase highlights my technical capabilities, from programming languages to architectural patterns and methodologies.
+As a Computer Science teacher, I've developed expertise across both technical and pedagogical domains over my career. This skills showcase highlights my capabilities, from programming languages to pedagogical skills to leadership.
