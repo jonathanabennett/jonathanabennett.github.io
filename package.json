@@ -1,6 +1,21 @@
 {
+  "comments": {
+    "dependencies": {},
+    "devDependencies": {
+      "@zetxek/adritian-theme-helper": "github.com/zetxek/adritian-free-hugo-theme",
+      "autoprefixer": "project",
+      "bootstrap": "github.com/zetxek/adritian-free-hugo-theme",
+      "bootstrap-print-css": "github.com/zetxek/adritian-free-hugo-theme",
+      "postcss": "project",
+      "postcss-cli": "project"
+    }
+  },
+  "dependencies": {},
   "devDependencies": {
+    "@zetxek/adritian-theme-helper": "^1.0.3",
     "autoprefixer": "^10.4.20",
+    "bootstrap": "^5.3.3",
+    "bootstrap-print-css": "^1.0.0",
     "postcss": "^8.4.45",
     "postcss-cli": "^11.0.0"
   }

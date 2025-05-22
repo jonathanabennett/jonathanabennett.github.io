@@ -12,8 +12,8 @@ params:
         btnText: "More info"
         URL: "/blog/robotics-competitions/"
     image:  
-        x: "images/works/vex-logo.png"
-        _2x: "images/works/vex-logo.png"
+        src: "images/works/vex-logo.png"
+        scale: 0.5
 ## The content is used for the description of the project
 ---
 I have launched robotics competition teams at the MS and HS levels. The HS teams were particularly successful, earning
