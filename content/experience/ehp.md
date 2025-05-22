@@ -7,14 +7,9 @@ company: "Eton House Preparatory School" # name of the company you worked for. F
 location: "Seoul, Korea" # place/city/country for the experience. Fill-in.
 duration: "2016-2017" # from-to, for example "2022-2024". Fill-in.
 
-## For the content, you can use a title and a job description.
-## For example:
-# ### Fixing the world, one byte at a time
-# The beginning of a great career.
-#
 ---
 
-# Role Description
+# ICT Project Lead
 
 This was a 50% teaching / 50% Tech Integrationalist role. In addition to teaching the Computer
 Science classes for Early Years to Key Stage 2 classes, I was also responsible for computer
