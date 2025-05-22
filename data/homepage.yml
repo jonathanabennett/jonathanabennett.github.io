@@ -18,8 +18,8 @@ showcase:
     <a target='_blank' href="https://github.com/zetxek/adritian-free-hugo-theme">Adritian Free Hugo Theme</a>. 
     It is hosted on <a target='_blank' href="https://github.com">Github</a>, and the code can be found 
     <a target='_blank' href="https://github.com/jonathanabennett/jonathanabennett.github.io">here</a>.
-    This is a modern toolset which demonstrates my ability to use and integrate modern tools which students will need 
-    to use and understand once they move on to their professional careers.
+    These are the sorts of tools used by professionals in this field, demonstrating my ability to integrate the sorts
+    of tools which students will need to understand in their professional careers.
   image:
     x: "images/showcase/showcase.png"
     _2x: "images/showcase/showcase@2x.png"
@@ -40,7 +40,7 @@ showcase:
       URL: "https://www.youtube.com/@JonathanBennettKorea"
 
     - icon: "facebook"
-      URL: "https://www.facebook.com/zetxek/"
+      URL: "https://www.facebook.com/jonathan.bennett.391469/"
 
 # about
 about:

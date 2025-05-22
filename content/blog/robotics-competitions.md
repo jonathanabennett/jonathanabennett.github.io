@@ -5,6 +5,19 @@ draft = false
 type = 'blog'
 +++
 
+# The Results
+I was one of the core members of the launch team for our school-wide Robotics Competitions program at SJA Jeju. I 
+worked closely with the MS coaches to help run their teams and their tournaments in the first year and I was the HS
+Robotics coach and the program coordinator for the following two years.
+
+In that time, our program grew from approximately 15 students in Middle School only to over 50 (after tryouts) from 
+6th to 12th grade. We will be adding 5th grade students next year. Not only did it grow numerically but we have
+experienced a lot of success as well.
+
+For two years in a row, our High School program has sent a team of students to represent Korea at the Vex World
+Championships. Only 840 of the roughly 9,000 Vex robotics teams worldwide are able to attend each year, so earning a 
+slot two years in a row is a great accomplishment.
+
 # The Challenge
 Launching a robotics program is a challenging endeavor for several reasons. Robotics programs demand a major up-front
 investment of capital and continued reinvestment to remain relevant, particularly in a competition setting. Robotics 
@@ -22,9 +35,9 @@ could meet those needs. These proposals included precise costs and reasons for e
 purchased. When possible, it also included cheaper alternatives, where possible, and timelines which would allow us to
 spread the costs out. 
 
-These proposals ranged from roughly $15,000 in a year up to nearly $90,000 in year for a major program expansion. In
-both schools, versions of my proposal were accepted with minimal modifications because of the detail and planning put
-into them.
+These proposals ranged from roughly $15,000 for a smaller launch year up to nearly $90,000 in year for a major program 
+expansion. In both schools, versions of my proposal were accepted with minimal modifications because of the detail and 
+planning put into them.
 
 ## Long Term Projects
 A successful robotics program, particularly a robotics competition program, is built over a series of years rather than
@@ -38,16 +51,16 @@ leagues. Tournaments need to be booked and scheduled in the school year before t
 coordinating with multiple groups to reserve spaces, order fields and other hosting equipment, get the tournament
 approval through RobotEvents, and communicate the event to other coaches so they can sign up. Having gotten other teams to
 sign up, there is still planning and organization required to design the floor plan, position the fields for easy 
-setup, and to coordinate with facilities to set up and tear down the event safely. Each tournament requires 20-30 adult 
-volunteers, who need to be recruited and then trained in their roles. Each of these tournaments requires planning over
-the course of a month or more in advance of the actual date to ensure a successful event.
+setup, and to coordinate with facilities to set up and tear down the event safely. Each tournament requires dozens of
+adult volunteers, who need to be recruited and then trained in their roles. Each of these tournaments requires extensive
+planning and setup beginning a month or more in advance of the actual date to ensure a successful event.
 
-In my first year running our robotics program, I did this for two tournaments on the same day (MS and HS). The second
-year, I hosted 1 MS tournament, 1 HS tournament, and the HS Korean National Tournament. The Korean National Tournament,
-in particular, is a large tournament including up to 50 teams from all over Korea. It must be well executed, as it is
-a Qualifying Event, meaning the top teams from that tournament will earn a slot at the World Championships. This year,
-the event was held over two days and required extensive coordination with Vex and with Seoul Foreign School, as they
-are the lead school for the KAIAC league robotics teams.
+In my first year as robotics coordinator, I did this for two tournaments on the same day (MS and HS). The second year, 
+I hosted 1 MS tournament, 1 HS league, and the HS Korean National Tournament. The Korean National Tournament,
+in particular, is a large tournamen including 42 teams from all over Korea. It must be well executed, as it is a 
+Qualifying Event, the results of this tournament determine which teams from Korea will be given a slot at the World 
+Championship. This year, the event was held over two days and required extensive coordination with Vex and with Seoul 
+Foreign School, as they are the lead school for the KAIAC league robotics teams.
 
 ## Logistics & Planning
 Robotics programs require a firm grasp of logistics, planning, and organization. In the physical spaces, robotics
@@ -59,7 +72,7 @@ before you even consider the structural components, which teams are expected to 
 need. Without a clear organizational system, robotics programs can be extremely wasteful.
 
 Travelling with a robotics program is even more complicated, as you need to arrange for the safe transport of fragile
-robots and also so spare parts and tools to repair them. I have taken robotics students on two different trips for
-tournaments, once to Seoul and once to Dallas for the World Championships. Both of these trips, I was very careful to
-structure the trip to give the students time to check and repair damage to their robot before and after the tournament.
+robots and also so spare parts and tools to repair them. I have taken robotics students on multiple trips for 
+tournaments, including two international trips to Worlds. Both of these trips, I was very careful to structure the 
+trip to give the students time to check and repair damage to their robot before and after the tournament.
 
