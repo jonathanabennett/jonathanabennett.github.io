@@ -15,14 +15,14 @@ teaching the Computer Science classes for Early Years to Key Stage 2 classes, I
 was also responsible for computer maintenance and support and for staff
 training in Ed Tech.
 
-# Google Administrator
+## Google Administrator
 
 I was one of two administrators for our Google Apps for Education workspace.
 Specifically, I was responsible for handling student accounts during our
 Chromebook rollout. I also managed Chrome extensions and other components.
 During this time, I received the Google Certified Admin Level 2 certification.
 
-# Chromebook Rollout
+## Chromebook Rollout
 
 I was tasked with writing our proposal for a one-to-one Chromebook program and
 then for implementing the rollout once it was done. I selected the Chromebooks,
@@ -31,7 +31,7 @@ for our business and administration team. Finally, when they arrived, I was
 responsible for imaging them, setting them up, training teachers on their use,
 and maintaining them when students had issues.
 
-# Teacher Training
+## Teacher Training
 
 I led multiple teacher trainings on Google tools ranging from Chromebooks to
 Gmail to Google Docs, including workshops to help teachers prepare for their

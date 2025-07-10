@@ -50,7 +50,8 @@ A typical class day in AP CSA looks like this:
   - Take attendance
   - Review important upcoming dates
 - 2-3 minutes on any common errors from reviewing their code
-- 60 minutes of independent work while I conference with them one on one or in small groups
+- 60 minutes of independent work while I conference with them one on one or in
+  small groups
 
 While I would like to get to every single student in every class, that is not
 always possible because I take as long as necessary with each individual

@@ -2,22 +2,22 @@ baseURL = "https://jonathanabennett.github.io/"
 title = "Jonathan Bennett"
 languageCode = "en"
 
- 
+
 [markup.goldmark.renderer]
 unsafe = true
 
 # Exclude footer section from generating list pages (index.html and index.xml)
 [outputs]
-  page = ["HTML"]
-  home = ["HTML", "RSS", "JSON"]
-  section = ["HTML", "RSS"]
-  taxonomy = ["HTML", "RSS"]
-  term = ["HTML", "RSS"]
-  footer = []
+page = ["HTML"]
+home = ["HTML", "RSS", "JSON"]
+section = ["HTML", "RSS"]
+taxonomy = ["HTML", "RSS"]
+term = ["HTML", "RSS"]
+footer = []
 
 # Explicitly prevent the footer section from generating any output
 [outputFormats.footerSection]
-  # Empty configuration to prevent any output
+# Empty configuration to prevent any output
 
 # Specifically disable generation of these kinds for the footer content
 disableKinds = ["footerSection", "RSS"]
@@ -67,8 +67,8 @@ target = "assets/css/bootstrap-print.css"
 
 
 [params]
-title = 'Adritian - a high performance hugo theme by Adrián Moreno'
-description = 'This hugo theme (Adritian) is based on Bootstrap and has features that make it suitable for a personal site, a portfolio or other kind of Single Page Applications.'
+title = 'Jonathan A. Bennett'
+description = 'Resume for Jonathan A. Bennett'
 images = ['/img/og-img.png']
 sections = [
   "showcase",
@@ -144,8 +144,6 @@ weight = 3
 [[languages.en.menus.header]]
 name = "How to"
 URL = "/blog"
-weight = 5
-
 [[languages.en.menus.header]]
 pre = "email"
 name = "email"
@@ -218,12 +216,12 @@ mobileHeader = false
 ## by default we allow override AND automatic selection
 
 [params.blog]
-layout = "sidebar-right"     # options: default (no sidebar), sidebar, sidebar-right
-sidebarWidth = "25"    # percentage width of the sidebar
+layout = "sidebar-right"       # options: default (no sidebar), sidebar, sidebar-right
+sidebarWidth = "25"            # percentage width of the sidebar
 showCategories = true
 showRecentPosts = true
 recentPostCount = 5
-listStyle = "summary"  # options: simple, summary
+listStyle = "summary"          # options: simple, summary
 featured_sort_by_weight = true
 featured_sort_by_date = false
 
