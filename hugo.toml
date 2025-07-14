@@ -145,7 +145,7 @@ name = 'Experience'
 URL = '#experience-single'
 weight = 3
 [[languages.en.menus.header]]
-name = "How to"
+name = "Blog"
 URL = "/blog"
 [[languages.en.menus.header]]
 pre = "email"
