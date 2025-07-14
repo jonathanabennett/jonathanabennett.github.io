@@ -12,7 +12,7 @@ showcase:
     programming. I am the K-12 STEAM Coordinator at <a target='_blank' href="https://sjajeju.kr">St. Johnsbury Academy Jeju</a>. 
     I am interested in a role which will allow me to build or work with a high level robotics competition program and 
     have a larger impact on the role of technology in a school.<br>
-    
+
     This website has been built using <a target='_blank' href="https://gohugo.io">hugo</a>, 
     <a target='_blank' href="https://www.markdownguide.org">markdown</a>, and the 
     <a target='_blank' href="https://github.com/zetxek/adritian-free-hugo-theme">Adritian Free Hugo Theme</a>. 
@@ -52,7 +52,7 @@ about:
       so. I structure my classes to maximize student flexibility on summative assessments, delivering nearly all of my
       assessments in non-AP courses through projects with extensive student agency and reflection at every step of the
       process. In AP Courses, my students consistently demonstrate <a href='/blog/ap-instruction/'>mastery</a> of the 
-      subject. Overall, 95% of my students pass the AP exams and 75% receive a 4 or a 5 (84% of my AP CSA students).
+      subject. Overall, 89% of my students pass the AP exams and 76% receive a 4 or a 5.
     </p>
     <p class="lead">
       My experience as a programmer also allows me to contribute to schools outside of the classroom. In the three most
@@ -85,14 +85,13 @@ education:
       year: "2002-2006"
       degree: "Bachelor of Science (BS), Cross Cultural Studies"
 
-
 # experience
 experience:
   enable: true
   title: "Experience"
   description: >
     I have 14 Years of educational experience and more than 25 years of programming experience. My experience in
-    international education covers K-12 and include AP Experience as well. 
+    international education covers K-12 and include AP Experience as well.
   button:
     icon: ""
     btnText: "Blog"
@@ -167,4 +166,3 @@ newsletter:
   success_message: "Successfully subscribed"
   error_message: "Error while subscribing."
   note: "We'll never share your email with anyone else."
-
