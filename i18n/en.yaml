@@ -47,11 +47,10 @@
 
 ## Homepage head title
 - id: "head_title"
-  translation: "Demo site for Adritian - a high performance hugo theme by Adrián Moreno"
+  translation: "Resume for Jonathan Bennett"
 
 - id: "head_description"
-  translation: "This hugo theme (Adritian) is based on Bootstrap and has features that make it suitable for a personal site, a portfolio or other kind of Single Page Applications."
-
+  translation: "This resume is built using Hugo and the Adritian theme."
 
 ## Blog
 - id: "read_more"
@@ -66,8 +65,7 @@
 ## 404 Page
 - id: "404_title"
   translation: "Page not found"
-- id: "404_description"  
+- id: "404_description"
   translation: "Sorry, but the page you were looking for could not be found."
 - id: "404_button"
   translation: "Back to homepage"
-
