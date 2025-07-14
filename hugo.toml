@@ -85,6 +85,9 @@ sections = [
 
 homepageExperienceCount = 6
 
+[params.meta]
+favicon = false
+
 [params.analytics]
 ## Analytics parameters.
 ### Supported so far: Vercel (Page Insights, Analytics)
