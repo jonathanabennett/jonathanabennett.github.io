@@ -1,15 +1,14 @@
-+++
-title = "Guide to Success"
-date = 2025-07-09T23:03:41+09:00
+---
+title = 'Guide to Success'
+date = 2025-07-11T17:38:33+02:00
 draft = false
-featured = false
-weight = 100  # Lower weight appears first in featured sections
-description = ""
-[images]
-    featured_image = ""  # Path to the featured image
-tags = []
-topics = []
-+++
+type = "blog"
+featured = true
+weight = 1000
+tags =
+- adritian
+- guide
+---
 
 # Guiding Students to Success
 
