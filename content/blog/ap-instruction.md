@@ -7,16 +7,20 @@ type = 'blog'
 
 # Top Results
 
-In the three years I have taught AP Computer Science A, I have consistently
-produced top results with my students. In 2024, the overall percentage of 4s
-and 5s on the AP CSA exam was 46%. Across the three years I have taught the
-class, my average is 84%. In addition to that, I have spoken with several
+In the four years I have taught AP Computer Science A, I have consistently
+produced top results with my students. Since I began teaching the class, 46%
+of my students have received a 5. 76% have received a 4 or 5 and 89% pass the
+exam with a 3 or higher. In addition to that, I have spoken with several
 students who have completed my AP CSA course about the computer science classes
 they are taking in University. Each of those students has pointed to specific
 elements of their CS courses which were significantly easier because of what
-they learned in my class. I am able to consistently produce these results by
-selecting strong curriculum, conducting targeted one-on-one conferencing, and
-preparing them for real testing environments
+they learned in my class. Many of those specifics (memory structures, different
+collection types, and different algorithm efficiency notations, for example)
+are not even part of the AP CSA curriculum. I am not teaching these courses solely
+to the exam, rather I am teaching them concepts from across the field of computer
+science. I am able to consistently produce these results by selecting strong
+curriculum, conducting targeted one-on-one conferencing, and preparing them for
+real testing environments.
 
 ## Strong Curriculum
 
