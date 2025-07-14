@@ -1,14 +1,12 @@
----
-title = 'Guide to Success'
-date = 2025-07-11T17:38:33+02:00
-draft = false
++++
+title = "Guide to Success"
+date = 2025-07-11T14:38:33+02:00
+draft = true
 type = "blog"
 featured = true
-weight = 1000
-tags =
-- adritian
-- guide
----
+weight = 10
+tags = ["pedagogy", "inquiry-based-learning"]
++++
 
 # Guiding Students to Success
 
