@@ -1,11 +1,11 @@
 +++
 title = "Guide to Success"
-date = 2025-07-11T14:38:33+02:00
-draft = true
+date = 2025-07-31T14:38:33+02:00
+draft = false
 type = "blog"
 featured = true
-weight = 10
-tags = ["pedagogy", "inquiry-based-learning"]
+weight = 100
+tags = ["pedagogy", "projects", "guide-to-success"]
 +++
 
 # Guiding Students to Success
@@ -15,40 +15,27 @@ Computer Science teacher, I believe it is especially important that I align my
 assessments as closely as I can to the experience that most students will have
 if they become Software Engineers.
 
-This isn't just important because it helps prepare them for future jobs, it also
-helps to learn the programming langauges better. Most exercises created for CS
-courses are very small. On average, they only require the students to write
-10-15 lines of code. They also go out of their way to isolate the concept being
-targeted.
+This isn't just important because it helps prepare them for future jobs, it
+also helps to learn the programming languages better. As we discussed in my
+previous post, most exercises created for CS courses are very small. On
+average, they only require the students to write 10-15 lines of code. They also
+go out of their way to isolate the concept being targeted.
 
-For example, a lesson on for loops will often only require students to read,
-debug, or write 4-5 code segments, each containing only a single for loop.
-They may have a separate function which is called in the for loop in one of the
-activities. Very few of the activities will have the students write more than
-3-5 lines inside the for loop.
-
-By comparison, in a project written in the same programming language to generate
-student reports, I had 13 lines of code, several of which called out to other
-10-20 line functions I had written. When looking at real projects, most programmers
-would say that a small project runs 300-500 lines of code. This is two orders
-of magnitude more than what students spend 80% of their time in class writing.
-
-In my experience, this massive gap in size means students feel very comfortable
-working with small code segments but struggle when they go to work on a real
-project. That project may be a personal project or it may be a larger project
-in university. By analogy, this is like an English class where students never
-write anything longer than a paragraph. While students can learn a lot about
-writing by writing shorter segments, they need to practice producing longer
-form writings in order to develop those skills.
+While this is great for the early stages of learning a programming language,
+most students can grow beyond the level where this is helpful very quickly with
+a bit of practice. Therefore, all of my classes other than AP CSA are
+structured so that 70-90% of the grade in that class is earned via projects -
+ideally projects spanning 4-6 weeks
 
 ## Challenges with Projects
 
 Larger projects come with their own challenges though, particularly projects
-where students are not expected to progress through the steps in lockstep.
-It is not uncommon for students to become stuck at different points in a project,
-putting that student out of sync with the rest of the class. At the same time,
-it isn't uncommon for students to procrastinate on large projects, leaving
-themselves without enough time to turn in what the teacher is expecting.
+where students are not expected to progress through the steps in lockstep (or
+possibly even not in the same order). It is not uncommon for students to become
+stuck at different points in a project, putting that student out of sync with
+the rest of the class. At the same time, it isn't uncommon for students to
+procrastinate on large projects, leaving themselves without enough time to turn
+in what the teacher is expecting.
 
 Another issue with larger projects in the classroom is student awareness of
 their own work. Estimating is an important skill when it comes to project
@@ -56,24 +43,42 @@ management and few school projects are structured to help develop this skill.
 Without this, students will not be able to accurately judge the scale of the
 projects they are undertaking.
 
+A final challenge with projects is that they can easily devolve into a mere
+box-ticking exercise. For example, consider the AP CS Principles Create Task.
+The Create Task is, theoretically, a project based learning experience where
+students create an application with "real world application". Unfortunately, my
+experience of seeing students do this project suggest that actually doing a
+project with "real world application" means you'll probably struggle to earn
+all of the points. The easiest way to earn the points is instead to create a
+variable that holds a list, as the user a question, then loop over the list
+with an if statement until you find a match to the user's response and output
+a. That may sound challenging if you have no programming experience, but in
+reality that is only about 10 lines of code (plus however many items you decide
+to put into the list). See again my points on the length of real programming
+projects. Students prioritizing the project over the rubric will receive a lower
+grade than those who simply tick all the boxes on the rubric. But a student who
+actually completes a real project has learned far more about programming that
+someone who merely ticked all the boxes.
+
 The Guide to Success approach to projects aims to develop student meta
-cognition about their work while also improving teacher tracking of student
-progress. It has also had the fortunate side-effect of functionally eliminating
+cognition about their work, improve teacher tracking of student progress, and
+move the box-ticking component of the project as far away from the grading as
+possible. It has also had the fortunate side-effect of functionally eliminating
 arguments with students over final project grades.
 
-## Project Format
+## Guiding Students to Success
 
-When using the Guide to Success format for a project, there are a few changes
-from a traditional project. First, students are given full access to the
-project and the rubric on Day 1 of the unit (which I always try to start on a
-Monday). Second, students are assessed on the rubric at the end of each week,
-even though they have not had enough time to actually complete the project.
-Finally, each assessment takes place in the form of a conference rather than a
-submission.
-
-The enabling document for this is the Guide to Success. An example Guide to
-Success is linked here. This Guide is for a Web Design Foundations project near
-the middle of the semester and is illustrative of a typical Guide to Success.
+The Guide to Success could be applied to any project structure, but I have
+found it works best when used inside the structure I've outlined in this
+series. Students are given the project and rubric at the beginning of the
+project and students are expected to make steady progress on the project for
+the entire length of the unit rather than lumping all the work up at the end.
+The Weekly Check-in process as part of the Guide to Success is a key part of
+that. Without regular check-ins, the Guide to Success **will not work**. I have
+found weekly to be the right balance allowing students time to make real
+progress and catching students starting to fall behind, but it depends on the
+length of your projects. I would recommend a minimum of 2 check-ins during a
+project.
 
 ### The Guide to Success
 
@@ -83,18 +88,20 @@ of the framework.
 
 #### Task Requirements
 
-Task Requirements represent the minimum a student can do and consider themselves
-"finished". This section should have all quantitative measurements for the project
-(cite x number of sources, uses y different HTML tags, etc). Students who cannot
-check all the boxes in this section at the end of the project **_receive an incomplete._**
+Task Requirements represent the minimum a student can do and consider
+themselves "finished". This section should have all quantitative measurements
+for the project (the box-ticking component of the project). Students who cannot
+check all the boxes in this section at the end of the project **_should receive
+an incomplete._**
 
 It is important that these checkboxes represent true minima. If there is something
-here which you would allow a student to omit in a submission, it does not belong
-here. Instead, it should be part of the next section. The things here should be
-what a student would have to do in order to attempt mastery of the standards and
-content.
+here which you would allow a student to omit in a submission, it does not
+belong here. For example, if you would accept an essay that did not cite any
+sources, you should not include citations in your Task Requirements. Instead,
+it should be part of the next section. The things here should be what a student
+would have to do in order to attempt mastery of the standards and content.
 
-When completing this document for an assignment, the students should check the
+When completing this document for a check-in, the students should check the
 boxes based on their progress through the task and the teacher should verify
 that they have, in fact, completed the tasks.
 
@@ -105,16 +112,14 @@ assignment. This can be any scale you want, I found 4 to be too small. As you ca
 see, I am currently using 6 but I will try 10 for the next iteration. It is best
 if this is an even number as it does not allow an "exactly in the middle" rating.
 
-You will notice that I did not include any descriptors in my qualitative criteria.
-Instead, I have built left space for reasoning. As with the task requirements,
-the student should mark their grade (I have mine highlight the grade they think
-they have earned) and then write their reasoning below. I encourage mine to write
-this as bullet points and to provide links to external evidence (such as specific
-line numbers in their project for my programming projects). The teacher should
-also grade the project, quickly during the conference for a check-in and in detail
-during the final project grading.
-
-See the section on each for more details.
+You will notice that I did not include any descriptors in my qualitative
+criteria. Instead, I have asked the students for their reasoning. As with the
+task requirements, the student should mark their grade (I have mine highlight
+the grade they think they have earned) and then write their reasoning below. I
+encourage mine to write this as bullet points and to provide links to external
+evidence (such as specific line numbers in their project for my programming
+projects). The teacher should also grade the project, quickly during the
+conference for a check-in and in detail during the final project grading.
 
 #### Self-Reflection
 
@@ -146,28 +151,20 @@ will have the student write this on their own during the conference rather than
 writing it myself. That tends to give them deeper understanding and ownership
 of the feedback.
 
-### The Weekly Cycle
+### Creating Qualitative Criteria
 
-These projects are built on a weekly cycle. My classes are largely conference
-driven, with very little mass direct instruction. Instead, instruction is given
-to individual students during conferences, which I aim to have at least twice a
-week (depending on class size). The conferences are different lengths,
-depending on the needs of the student, but generally are 3-5 minutes each. In
-that conference, we discuss where they are in the coursework, where they are in
-the project (which they work on concurrently with the coursework), and what
-challenges or misunderstandings they may be facing. These discussions are freewheeling
-and involve whiteboarding sessions, coding examples, physical examples, and
-other strategies to draw out students. I plan to write about these in future
-posts.
+My goal for each qualitative criteria is that it is a question centered on an
+adjective related to how well they have either used the programming construct
+or built their project. For my projects, most of the assessment is actually
+connected to project quality rather than the use of specific programming
+constructs. I require them to a `for` loop in the Task Requirements. Then I
+assess them on their explanation of _why_ they used that for loop in their
+actual grade. This shifts the emphasis from "I have to have a for loop" to "I
+have to have a _useful_ for loop."
 
-The Friday conference is different. First of all, it tends to be a little
-shorter because everybody has to conference on either Thursday or Friday and
-students tend to procrastinate. But more importantly, it is a graded check-in.
-As our school uses traditional grading, this is scored as a quiz. The students
-fill out a Guide to Success documenting their progress on the project up to
-that point. They check the relevant boxes and grade their work based on what
-they have finished.
-
-Early in a project, students typically have very low grades on their check-ins.
-This is to be expected and is encouraged, the check-in is structured so a low,
-accurate grade does not hurt them.
+This is essential to writing good programs because good programs are not about
+the programming constructs they are made of, they are about the user
+experience. This is why the emphasis needs to be on the user experience. This
+means that **on paper**, I heavily assess just a few of the CSTA standards
+(3A-AP-19, 3A-AP-21, 3A-AP-23, and 3A-IC-25). The other standards are assessed,
+but many of them are assessed as Task Requirements rather than qualitatively.
