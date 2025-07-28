@@ -145,31 +145,63 @@ them.
 ## How I Do Projects
 
 When building a project for a programming class, I focus first on which skills
-I want students to practice. For example, in the second unit of Web Design Foundations course, students need to incorporate style (colors, font sizes, etc) into their website via a programming language called CSS.
+I want students to practice. For example, in the second unit of Web Design
+Foundations course, students need to incorporate style (colors, font sizes,
+etc) into their website via a programming language called CSS.
 
-Now I start thinking about what project a student could create that would emphasize colors and other style elements. An important part of this is keeping in mind what skills the students do not yet have access to. In this class, multiple files are added in the third unit, which limits the sorts of projects students can do.
+Now I start thinking about what project a student could create that would
+emphasize colors and other style elements. An important part of this is keeping
+in mind what skills the students do not yet have access to. In this class,
+multiple files are added in the third unit, which limits the sorts of projects
+students can do.
 
-The project I've selected for this unit in previous years is an advertising website. Style and design are an important part of marketing and branding, which makes it a great project for this unit. In previous years, I have had them go back to the simple portfolio website they built in unit 1 and add style, but that has been moved to be part of the final project instead.
+The project I've selected for this unit in previous years is an advertising
+website. Style and design are an important part of marketing and branding,
+which makes it a great project for this unit. In previous years, I have had
+them go back to the simple portfolio website they built in unit 1 and add
+style, but that has been moved to be part of the final project instead.
 
-Knowing the skills and the project, I now start working on how I want to assess these skills. I will write more about this in another post. But having established this, it's now time to have the students start working.
+Knowing the skills and the project, I now start working on how I want to assess
+these skills. I will write more about this in another post. But having
+established this, it's now time to have the students start working.
 
 Having set up the project, it's now time to have the students start working.
 
 ### The Project Learning Process
 
-In my classes, we begin projects on the first day of the unit with a rubric review. Students begin working on their project regardless of the fact that they do not know the material in the unit yet.
+In my classes, we begin projects on the first day of the unit with a rubric
+review. Students begin working on their project regardless of the fact that
+they do not know the material in the unit yet.
 
-I have found that students retain programming skills better when they discover the need for them. Starting the project from the beginning allows me to have conversations with students that tie the skills in the coursework directly to their projects. "Ah, you the color on this page to change as they scroll down? You need to look at the animations lesson."
+I have found that students retain programming skills better when they discover
+the need for them. Starting the project from the beginning allows me to have
+conversations with students that tie the skills in the coursework directly to
+their projects. "Ah, you the color on this page to change as they scroll down?
+You need to look at the animations lesson."
 
-Students split their time in class between the coursework and their projects, with the general idea being that they work on their project until they need to learn something new, at which point they go back to the coursework until they find what they need.
+Students split their time in class between the coursework and their projects,
+with the general idea being that they work on their project until they need to
+learn something new, at which point they go back to the coursework until they
+find what they need.
 
-While obviously students aren't forced to follow this structure, and many students choose to basically follow a traditional system of doing all the coursework and then starting their project, students who do both need less reminding of concepts when they need to use them again in future projects.
+While obviously students aren't forced to follow this structure, and many
+students choose to basically follow a traditional system of doing all the
+coursework and then starting their project, students who do both need less
+reminding of concepts when they need to use them again in future projects.
 
-Each week, students are required to complete a check-in following the Guide To Success (written about elsewhere). The only requirement in terms of progress is that they can increase their estimated score by at least 1 each week. This way, even students choosing to wait till the end are forced to do some of the planning and brainstorming before the very end of the project.
+Each week, students are required to complete a check-in following the Guide To
+Success (written about elsewhere). The only requirement in terms of progress is
+that they can increase their estimated score by at least 1 each week. This way,
+even students choosing to wait till the end are forced to do some of the
+planning and brainstorming before the very end of the project.
 
 ## Looking Ahead
 
-This framework seems to me to be the most effective way to teach Computer Science. Because of its focus on projects to drive learning, it mimics the actual development project of most real-world programming projects.
+This framework seems to me to be the most effective way to teach Computer
+Science. Because of its focus on projects to drive learning, it mimics the
+actual development project of most real-world programming projects.
 
-In future articles in this series, I will look at the daily structure of project work in my classes and outline how I use a tool called the "Guide to Success" to promote student meta-thinking about their projects and learning.
+In future articles in this series, I will look at the daily structure of
+project work in my classes and outline how I use a tool called the "Guide to
+Success" to promote student meta-thinking about their projects and learning.
 
